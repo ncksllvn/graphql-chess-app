@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
+
+import { initChess } from './actions'
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App({ initChess, appStatus }) {
+  useEffect(() => {
+    initChess()
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,17 +17,20 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {JSON.stringify(appStatus)}
       </header>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    appStatus: state.appStatus
+  }
+}
+const mapDispatchToProps = {
+  initChess
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+export { App };
