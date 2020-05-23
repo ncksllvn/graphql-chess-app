@@ -2,11 +2,11 @@ import { combineReducers } from 'redux'
 
 import {
   CHESS_AND_CONSTANTS
-} from './constants'
+} from '../constants'
 
 import {
   mapChessDataToState
-} from './utilities'
+} from '../utilities'
 
 const initialState = {
   appStatus: { loading: true },

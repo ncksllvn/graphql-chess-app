@@ -1,11 +1,11 @@
 import {
   CALL_API,
   CHESS_AND_CONSTANTS
-} from './constants'
+} from '../constants'
 
 import {
   GET_CONSTANTS_AND_CHESS
-} from './graphql'
+} from '../graphql'
 
 export function getChessAndConstants() {
   return {
