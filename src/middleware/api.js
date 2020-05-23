@@ -2,7 +2,7 @@ import {
   CALL_API
 } from '../constants'
 
-const CHESS_SERVER = process.env.REACT_APP_API
+const serverUrl = process.env.REACT_APP_API
 const method = 'POST'
 const headers =  {
   'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ export default () => next => async action => {
   next({ type: request })
 
   try {
-    const response = await fetch(CHESS_SERVER, options)
+    const response = await fetch(serverUrl, options)
 
     if (response.ok) {
       const json = await response.json()
