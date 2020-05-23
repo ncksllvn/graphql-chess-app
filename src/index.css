@@ -1,10 +1,17 @@
+:root {
+  --dark-accent-color: chocolate;
+  --light-accent-color: antiquewhite;
+  --app-width: 88vmin;
+  --square-width: calc(var(--app-width) / 8);
+}
+
 body {
-  background-color: #c0c0c0;
+  background-color: tan;
 }
 
 .chess-container {
   margin: 0 auto;
-  width: calc(80vmin + 16px);
+  width: calc(var(--app-width) + 16px);
 }
 
 .chess-loading {
@@ -12,12 +19,29 @@ body {
 }
 
 .chess-board {
-  margin: 0 auto;
   display: grid;
-  grid-template-rows: repeat(8, 10vmin);
-  grid-template-columns: repeat(8, 10vmin);
+  grid-template-rows: repeat(8, var(--square-width));
+  grid-template-columns: repeat(8, var(--square-width));
 }
 
 .chess-board-square {
+  background-color: var(--light-accent-color);
   min-width: 0;
+  /* box-shadow:
+    inset -1px -1px #0a0a0a,
+    inset 1px 1px #fff,
+    inset -2px -2px grey,
+    inset 2px 2px #dfdfdf; */
+}
+
+.chess-board-square:not(:disabled):active {
+  /* box-shadow:
+    inset -1px -1px #fff,
+    inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf,
+    inset 2px 2px grey; */
+}
+
+.chess-board-square--dark {
+  background-color: var(--dark-accent-color);
 }

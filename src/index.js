@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import '98.css'
+// import '98.css'
 import './index.css';
 import App from './App';
 import reducers from './reducers'

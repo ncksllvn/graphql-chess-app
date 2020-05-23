@@ -11,15 +11,15 @@ class App extends React.Component {
 
   render() {
     const {
-      appStatus: { loading },
+      appStatus: { loading, errors },
       chess
     } = this.props
 
     return (
       <>
-        {loading ? (
-          <div className="chess-loading">Contacting server...</div>
-        ) : <ChessBoard board={chess.board}/> }
+        {loading && <div className="chess-loading">Contacting server...</div>}
+        {errors && <code>{JSON.stringify(errors)}</code>}
+        {!loading && !errors && <ChessBoard board={chess.board}/>}
       </>
     );
   }
