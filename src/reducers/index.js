@@ -40,8 +40,14 @@ function chess(state = initialState.chess, action) {
 
 function constants(state = initialState.constants, action) {
   switch (action.type) {
-    case CHESS_AND_CONSTANTS.RECEIVE:
-      return action.data.constants
+    case CHESS_AND_CONSTANTS.RECEIVE: {
+      const {
+        pieceConstants: pieceTypes,
+        colorConstants: colors
+      } = action.data
+
+      return { pieceTypes, colors }
+    }
 
     default:
       return state
