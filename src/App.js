@@ -1,25 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
+import ChessBoard from './components/ChessBoard'
 import { getChessAndConstants } from './actions'
-import logo from './logo.svg';
-import './App.css';
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.getChessAndConstants()
+    this.props.initApp()
   }
+
   render() {
+    const {
+      appStatus: { loading },
+      chess
+    } = this.props
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          {JSON.stringify(this.props.appStatus)}
-        </header>
-      </div>
+      <>
+        {loading ? (
+          <div className="chess-loading">Contacting server...</div>
+        ) : <ChessBoard board={chess.board}/> }
+      </>
     );
   }
 }
@@ -31,7 +32,7 @@ const mapStateToProps = state => {
   }
 }
 const mapDispatchToProps = {
-  getChessAndConstants
+  initApp: getChessAndConstants
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
