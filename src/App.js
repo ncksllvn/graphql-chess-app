@@ -1,30 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 
 import { getChessAndConstants } from './actions'
 import logo from './logo.svg';
 import './App.css';
 
-function App({ getChessAndConstants, appStatus, chess }) {
-  useEffect(() => {
-    getChessAndConstants()
-  }, [])
-
-  if (appStatus.loading) {
-    return <h1>Loading</h1>
+class App extends React.Component {
+  componentDidMount() {
+    this.props.getChessAndConstants()
   }
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {JSON.stringify(chess)}
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          {JSON.stringify(this.props.appStatus)}
+        </header>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {
