@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 
-import { initChess } from './actions'
+import { getChessAndConstants } from './actions'
 import logo from './logo.svg';
 import './App.css';
 
-function App({ initChess, appStatus }) {
+function App({ getChessAndConstants, appStatus, chess }) {
   useEffect(() => {
-    initChess()
+    getChessAndConstants()
   }, [])
+
+  if (appStatus.loading) {
+    return <h1>Loading</h1>
+  }
 
   return (
     <div className="App">
@@ -17,7 +21,7 @@ function App({ initChess, appStatus }) {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        {JSON.stringify(appStatus)}
+        {JSON.stringify(chess)}
       </header>
     </div>
   );
@@ -25,11 +29,12 @@ function App({ initChess, appStatus }) {
 
 const mapStateToProps = state => {
   return {
-    appStatus: state.appStatus
+    appStatus: state.appStatus,
+    chess: state.chess
   }
 }
 const mapDispatchToProps = {
-  initChess
+  getChessAndConstants
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

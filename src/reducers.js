@@ -1,37 +1,53 @@
+import { combineReducers } from 'redux'
+
 import {
-  INIT_CHESS_REQUESTED,
-  INIT_CHESS_SUCCESS,
-  INIT_CHESS_ERROR
-} from './actions'
+  CHESS_AND_CONSTANTS
+} from './constants'
+
+import {
+  mapChessDataToState
+} from './utilities'
 
 const initialState = {
-  appStatus: {
-    loading: true
+  appStatus: { loading: true },
+  chess: null,
+  constants: null
+}
+
+function appStatus(state = initialState.appStatus, action) {
+  switch (action.type) {
+    case CHESS_AND_CONSTANTS.RECEIVE:
+      return { loading: false }
+
+    case CHESS_AND_CONSTANTS.FAILURE:
+      return { errors: action.errors }
+
+    case CHESS_AND_CONSTANTS.REQUEST:
+    default:
+      return state
   }
 }
 
-export default function reducer(state = initialState, action) {
+function chess(state = initialState.chess, action) {
   switch (action.type) {
-    case INIT_CHESS_REQUESTED:
-      return {
-        ...state,
-        appStatus: { loading: true }
-      }
-
-    case INIT_CHESS_SUCCESS:
-      console.log(action)
-      return {
-        ...state,
-        appStatus: { data: action.data }
-      }
-
-    case INIT_CHESS_ERROR:
-      return {
-        ...state,
-        appStatus: { errors: action.errors }
-      }
+    case CHESS_AND_CONSTANTS.RECEIVE:
+      return mapChessDataToState(action.data.chess)
 
     default:
       return state
   }
 }
+
+function constants(state = initialState.constants, action) {
+  switch (action.type) {
+    case CHESS_AND_CONSTANTS.RECEIVE:
+      return action.data.constants
+
+    default:
+      return state
+  }
+}
+
+export default combineReducers({
+  appStatus, chess, constants
+})
