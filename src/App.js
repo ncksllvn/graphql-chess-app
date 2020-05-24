@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import Board from './components/Board'
-import { getChessAndConstants } from './actions'
+import { startApp } from './actions'
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.initApp()
+    this.props.startApp()
   }
 
   render() {
@@ -32,7 +32,7 @@ const mapStateToProps = state => {
   }
 }
 const mapDispatchToProps = {
-  initApp: getChessAndConstants
+  startApp
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

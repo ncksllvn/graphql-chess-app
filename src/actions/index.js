@@ -7,7 +7,7 @@ import {
   GET_CONSTANTS_AND_CHESS
 } from '../graphql'
 
-export function getChessAndConstants() {
+export function startApp() {
   return {
     [CALL_API]: {
       query: GET_CONSTANTS_AND_CHESS,
