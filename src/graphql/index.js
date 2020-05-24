@@ -1,6 +1,5 @@
 const CHESS_FRAGMENT = `
   fragment ChessAttributes on Chess {
-    ascii
       analysis {
         bestMove {
           from
@@ -9,14 +8,14 @@ const CHESS_FRAGMENT = `
         }
       }
       board {
-        rank1 { type color }
-        rank2 { type color }
-        rank3 { type color }
-        rank4 { type color }
-        rank5 { type color }
-        rank6 { type color }
-        rank7 { type color }
-        rank8 { type color }
+        rank
+        squares {
+          file
+          piece {
+            type
+            color
+          }
+        }
       }
       fen
       gameOver
