@@ -6,29 +6,40 @@ export const CHESS_AND_CONSTANTS = {
   FAILURE: 'chess-and-constants/FAILURE'
 }
 
+export const KEYS = {
+  BLACK: 'BLACK',
+  WHITE: 'WHITE',
+  KING: 'KING',
+  QUEEN: 'QUEEN',
+  ROOK: 'ROOK',
+  BISHOP: 'BISHOP',
+  KNIGHT: 'KNIGHT',
+  PAWN: 'PAWN',
+}
+
 export const PIECE_SYMBOLS = {
-  KING: {
-    BLACK: '\u265A',
-    WHITE: '\u2654'
+  [KEYS.KING]: {
+    [KEYS.BLACK]: '\u265A',
+    [KEYS.WHITE]: '\u2654'
   },
-  QUEEN: {
-    BLACK: '\u265B',
-    WHITE: '\u2655'
+  [KEYS.QUEEN]: {
+    [KEYS.BLACK]: '\u265B',
+    [KEYS.WHITE]: '\u2655'
   },
-  ROOK: {
-    BLACK: '\u265C',
-    WHITE: '\u2656'
+  [KEYS.ROOK]: {
+    [KEYS.BLACK]: '\u265C',
+    [KEYS.WHITE]: '\u2656'
   },
-  BISHOP: {
-    BLACK: '\u265D',
-    WHITE: '\u2657'
+  [KEYS.BISHOP]: {
+    [KEYS.BLACK]: '\u265D',
+    [KEYS.WHITE]: '\u2657'
   },
-  KNIGHT: {
-    BLACK: '\u265E',
-    WHITE: '\u2658'
+  [KEYS.KNIGHT]: {
+    [KEYS.BLACK]: '\u265E',
+    [KEYS.WHITE]: '\u2658'
   },
-  PAWN: {
-    BLACK: '\u265F',
-    WHITE: '\u2659'
+  [KEYS.PAWN]: {
+    [KEYS.BLACK]: '\u265F',
+    [KEYS.WHITE]: '\u2659'
   }
 }
