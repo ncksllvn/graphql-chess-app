@@ -10,10 +10,8 @@ export default function userInteractions(state = initialState, action) {
   switch (action.type) {
     case PIECE_SELECTED: {
       const selectedPiece = action.piece
-      if (
-        selectedPiece.file === state.selectedPiece?.file &&
-        selectedPiece.rank === state.selectedPiece?.rank
-      ) {
+
+      if (selectedPiece.squareId === state.selectedPiece?.squareId) {
         return { ...state, selectedPiece: null }
       }
 

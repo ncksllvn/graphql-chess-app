@@ -15,7 +15,7 @@ const {
   BLACK
 } = KEYS
 
-export default function Piece({ file, rank, type, color }) {
+export default function Piece({ squareId, type, color }) {
   const {
     piecesBySymbol,
     colorsBySymbol
@@ -35,15 +35,20 @@ export default function Piece({ file, rank, type, color }) {
   const colorName = colorsBySymbol[color]
 
   let moves = null
-  let ariaLabel = null
-
-  const coords = `${file.toUpperCase()} ${rank}`
+  let NodeType = 'button'
+  let onClick = null
+  let enabled = false
+  let ariaLabel = `${squareId.toUpperCase()} contains a ${colorName} ${typeName}`
 
   if (colorName === USER_COLOR) {
-    moves = movesBySquare[`${file}${rank}`]
-    ariaLabel = `Move ${typeName} on ${coords}`
+    moves = movesBySquare[squareId]
+    if (moves?.length > 0) {
+      enabled = true
+      onClick = () => dispatch(pieceSelected({ squareId, moves }))
+      ariaLabel = `Move ${typeName} on ${squareId.toUpperCase()}`
+    }
   } else {
-    ariaLabel = `${coords} contains a ${colorName} ${typeName}`
+    NodeType = 'span'
   }
 
   const visual = PIECE_VISUALS[typeName][colorName]
@@ -51,19 +56,13 @@ export default function Piece({ file, rank, type, color }) {
     colorName === BLACK ? ' chess-board-piece--black' : ''
   }`
 
-  const enabled = (
-    moves?.length > 0
-  )
-
-  const onClick = () => dispatch(pieceSelected({ file, rank, moves }))
-
   return (
-    <button
+    <NodeType
       className={className}
       aria-label={ariaLabel}
       disabled={!enabled}
       onClick={onClick}>
       {visual}
-    </button>
+    </NodeType>
   )
 }

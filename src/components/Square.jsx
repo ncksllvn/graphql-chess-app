@@ -15,16 +15,20 @@ export default function Square({ file, rank, dark, piece: pieceProps }) {
 
   if (selectedPiece) {
     const { moves } = selectedPiece
+    const thisSquareContainsSelectedPiece = (coords === moves[0].from)
     const selectedPieceCanMoveToThisSquare = moves.some(move => move.to === coords)
+    if (thisSquareContainsSelectedPiece || selectedPieceCanMoveToThisSquare) {
+      className += ' chess-board-square--destination'
+    }
+
     if (selectedPieceCanMoveToThisSquare) {
       NodeType = 'button'
-      className += ' chess-board-square--destination'
     }
   }
 
   return (
     <NodeType className={className}>
-      <Piece file={file} rank={rank} {...pieceProps}/>
+      <Piece squareId={coords} {...pieceProps}/>
     </NodeType>
   )
 }
