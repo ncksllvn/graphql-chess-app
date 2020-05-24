@@ -25,6 +25,8 @@ export default function Piece({ file, rank, type, color }) {
     movesBySquare
   } = useSelector(state => state.chess)
 
+  const dispatch = useDispatch()
+
   if (!type) {
     return null
   }
@@ -33,13 +35,18 @@ export default function Piece({ file, rank, type, color }) {
   const colorName = colorsBySymbol[color]
 
   let moves = null
+  let ariaLabel = null
+
+  const coords = `${file.toUpperCase()} ${rank}`
 
   if (colorName === USER_COLOR) {
     moves = movesBySquare[`${file}${rank}`]
+    ariaLabel = `Move ${typeName} on ${coords}`
+  } else {
+    ariaLabel = `${coords} contains a ${colorName} ${typeName}`
   }
 
   const visual = PIECE_VISUALS[typeName][colorName]
-  const ariaLabel = `${colorName} ${typeName} on ${file.toUpperCase()} ${rank}`
   const className = `chess-board-piece${
     colorName === BLACK ? ' chess-board-piece--black' : ''
   }`
@@ -48,7 +55,7 @@ export default function Piece({ file, rank, type, color }) {
     moves?.length > 0
   )
 
-  const onClick = () => console.log(moves)
+  const onClick = () => dispatch(pieceSelected({ file, rank, moves }))
 
   return (
     <button

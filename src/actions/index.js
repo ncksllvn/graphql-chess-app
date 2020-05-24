@@ -1,6 +1,7 @@
 import {
   CALL_API,
-  CHESS_AND_CONSTANTS
+  CHESS_AND_CONSTANTS,
+  PIECE_SELECTED
 } from '../constants'
 
 import {
@@ -20,6 +21,6 @@ export function startApp() {
   }
 }
 
-export function pieceSelected() {
-  return {}
+export function pieceSelected(piece) {
+  return { type: PIECE_SELECTED, piece }
 }
