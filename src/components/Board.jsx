@@ -1,5 +1,5 @@
 import React from 'react'
-import ChessBoardSquare from './Square'
+import Square from './Square'
 
 export default function Board({ board }) {
   const squares = []
@@ -8,7 +8,7 @@ export default function Board({ board }) {
   for (const [file, ranks] of Object.entries(board)) {
     for (const [rank, piece] of ranks.entries()) {
       squares.push(
-        <ChessBoardSquare
+        <Square
           key={`${file}${rank}`}
           file={file.toUpperCase()}
           rank={rank + 1}
