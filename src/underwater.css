@@ -1,21 +1,22 @@
 :root {
-  --dark-accent-color: darkgoldenrod;
-  --light-accent-color: tan;
   --app-width: 88vmin;
   --square-width: calc(var(--app-width) / 8);
+  --light-accent-color: rgba(214,197,138, 0.7);
+  --dark-accent-color: rgba(161,132,88, 0.7);
 }
 
-body {
-  background-color: blanchedalmond;
+html {
+  height: 100%;
+  background-color: #38FED2;
+  background-position: left bottom;
+  background-size: auto 100%;
+  background-image: url(/underwater.png);
+  background-repeat: repeat-x;
 }
 
 .chess-container {
   margin: 0 auto;
   width: calc(var(--app-width) + 16px);
-}
-
-.chess-loading {
-  cursor: progress;
 }
 
 .chess-board {
@@ -25,11 +26,15 @@ body {
 }
 
 .chess-board-square {
-  background-color: var(--light-accent-color);
+  background-color: var(--light-accent-color)
 }
 
 .chess-board-square--dark {
   background-color: var(--dark-accent-color);
+}
+
+.chess-board-square--destination {
+  background-color: rgba(181,254,182, 0.7) !important;
 }
 
 .chess-board-piece {
@@ -42,12 +47,13 @@ body {
   padding: 0;
   background: none;
   border: none;
-}
-
-.chess-board-piece:active {
-  outline-style: inset;
+  color: white;
 }
 
 .chess-board-piece--black {
   color: black;
+}
+
+.chess-board-piece--selected {
+  background-color: rgba(41,253,46, 0.7) !important;
 }
