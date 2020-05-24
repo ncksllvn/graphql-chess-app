@@ -19,3 +19,7 @@ export function startApp() {
     }
   }
 }
+
+export function pieceSelected() {
+  return {}
+}

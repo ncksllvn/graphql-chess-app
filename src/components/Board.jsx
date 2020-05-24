@@ -10,7 +10,7 @@ export default function Board({ board }) {
       squares.push(
         <Square
           key={`${file}${rank}`}
-          file={file.toUpperCase()}
+          file={file}
           rank={rank + 1}
           piece={piece}
           dark={dark}/>
