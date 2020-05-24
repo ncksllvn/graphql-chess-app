@@ -9,14 +9,14 @@ const CHESS_FRAGMENT = `
         }
       }
       board {
-        a { type color }
-        b { type color }
-        c { type color }
-        d { type color }
-        e { type color }
-        f { type color }
-        g { type color }
-        h { type color }
+        rank1 { type color }
+        rank2 { type color }
+        rank3 { type color }
+        rank4 { type color }
+        rank5 { type color }
+        rank6 { type color }
+        rank7 { type color }
+        rank8 { type color }
       }
       fen
       gameOver

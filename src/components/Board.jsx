@@ -3,20 +3,24 @@ import Square from './Square'
 
 export default function Board({ board }) {
   const squares = []
-  let dark = true
 
-  for (const [file, ranks] of Object.entries(board)) {
-    for (const [rank, piece] of ranks.entries()) {
+  let dark = true
+  let rank = 8
+  const files = 'abcdefgh'
+
+  for (const row of Object.values(board)) {
+    for (const [colIndex, piece] of row.entries()) {
       squares.push(
         <Square
-          key={`${file}${rank}`}
-          file={file}
-          rank={rank + 1}
+          key={squares.length}
+          rank={rank}
+          file={files[colIndex]}
           piece={piece}
           dark={dark}/>
       )
       dark = !dark
     }
+    rank--
     dark = !dark
   }
   return <div className="chess-board">{squares}</div>

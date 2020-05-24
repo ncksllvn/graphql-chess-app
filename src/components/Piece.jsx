@@ -15,22 +15,21 @@ const {
   BLACK
 } = KEYS
 
-export default class Piece extends React.Component {
+class Piece extends React.Component {
   render() {
     const {
       file,
       rank,
       type,
-      color
+      typeName,
+      colorName,
+      moves
     } = this.props
 
     if (!type) {
       return null
     }
 
-    const moves = movesBySquare[`${file}${rank}`]
-    const typeName = piecesBySymbol[type]
-    const colorName = colorsBySymbol[color]
     const className = `chess-board-piece${
       colorName === BLACK ? ' chess-board-piece--black' : ''
     }`
@@ -47,37 +46,18 @@ export default class Piece extends React.Component {
     )
   }
 }
-export default function Piece({ file, rank, type, color }) {
-  const {
-    piecesBySymbol,
-    colorsBySymbol
-  } = useSelector(state => state.constants)
 
-  const {
-    movesBySquare
-  } = useSelector(state => state.chess)
-
-  const dispatch = useDispatch()
-
-  if (!type) {
-    return null
+const mapStateToProps = (state, { type, color, file, rank }) => {
+  return {
+    moves: state.chess.movesBySquare[`${file}${rank}`],
+    typeName: state.constants.piecesBySymbol[type],
+    colorName: state.constants.colorsBySymbol[color]
   }
-
-  const moves = movesBySquare[`${file}${rank}`]
-  const typeName = piecesBySymbol[type]
-  const colorName = colorsBySymbol[color]
-  const className = `chess-board-piece${
-    colorName === BLACK ? ' chess-board-piece--black' : ''
-  }`
-
-  return (
-    <button
-      data-square={`${file}${rank}`}
-      disabled={moves?.length === 0}
-      onClick={() => console.log(moves)}
-      className={className}
-      aria-label={`${colorName} ${typeName} on ${file.toUpperCase()} ${rank}`}>
-      {PIECE_SYMBOLS[typeName][colorName]}
-    </button>
-  )
 }
+
+const mapDispatchToProps = {
+  pieceSelected
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Piece)
+export { Piece }
