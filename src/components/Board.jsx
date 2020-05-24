@@ -1,7 +1,7 @@
 import React from 'react'
-import ChessBoardSquare from './ChessBoardSquare'
+import ChessBoardSquare from './Square'
 
-export default function ChessBoard({ board }) {
+export default function Board({ board }) {
   const squares = []
   let dark = true
 
@@ -10,8 +10,8 @@ export default function ChessBoard({ board }) {
       squares.push(
         <ChessBoardSquare
           key={`${file}${rank}`}
-          file={file}
-          rank={rank}
+          file={file.toUpperCase()}
+          rank={rank + 1}
           piece={piece}
           dark={dark}/>
       )

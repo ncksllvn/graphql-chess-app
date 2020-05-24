@@ -5,7 +5,7 @@ import {
   PIECE_SYMBOLS
 } from '../constants'
 
-export default function Piece({ type, color } = {}) {
+export default function Piece({ file, rank, type, color }) {
   const {
     pieceTypes,
     colors
@@ -17,7 +17,7 @@ export default function Piece({ type, color } = {}) {
 
   const [typeName] = Object.entries(pieceTypes).find(
     ([_typeName, symbol]) => type === symbol
-    )
+  )
 
   const [colorName] = Object.entries(colors).find(
     ([_colorName, symbol]) => color === symbol
@@ -25,7 +25,7 @@ export default function Piece({ type, color } = {}) {
 
   return (
     <button
-      aria-label={`${colorName} ${typeName}`}>
+      aria-label={`${colorName} ${typeName} on ${file} ${rank}`}>
       {PIECE_SYMBOLS[typeName][colorName]}
     </button>
   )

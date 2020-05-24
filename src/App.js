@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import ChessBoard from './components/ChessBoard'
+import Board from './components/Board'
 import { getChessAndConstants } from './actions'
 
 class App extends React.Component {
@@ -19,7 +19,7 @@ class App extends React.Component {
       <>
         {loading && <div className="chess-loading">Contacting server...</div>}
         {errors && <code>{JSON.stringify(errors)}</code>}
-        {!loading && !errors && <ChessBoard board={chess.board}/>}
+        {!loading && !errors && <Board board={chess.board}/>}
       </>
     );
   }
