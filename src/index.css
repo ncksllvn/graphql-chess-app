@@ -1,8 +1,6 @@
 :root {
-  /* color: dar */
   --dark-accent-color: darkgoldenrod;
   --light-accent-color: tan;
-  /* color: ta */
   --app-width: 88vmin;
   --square-width: calc(var(--app-width) / 8);
 }
