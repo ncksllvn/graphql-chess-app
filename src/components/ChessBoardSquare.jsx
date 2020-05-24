@@ -1,32 +1,16 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import Piece from './Piece'
 
-export default function ChessBoardSquare({ file, rank, piece, dark }) {
-  const constants = useSelector(state => state.constants)
+export default function ChessBoardSquare({ file, rank, dark, piece: pieceProps }) {
   const className = `chess-board-square ${
     dark ? 'chess-board-square--dark' : ''
   }`
 
-  let description = `File ${file.toUpperCase()}, Rank ${rank + 1}`
-
-  if (piece) {
-    let [typeName] = Object
-      .entries(constants.pieceTypes)
-      .find(([_typeName, type]) => {
-        return type === piece.type
-      })
-
-    description = `${description} has a ${typeName}`
-  } else {
-    description = `${description} is empty`
-  }
+  const coords = `${file.toUpperCase()},${rank + 1}`
 
   return (
-    <button
-      disabled={!piece}
-      aria-label={description}
-      className={className}>
-      {piece?.type}
-    </button>
+    <div aria-label={coords} className={className}>
+      <Piece {...pieceProps}/>
+    </div>
   )
 }
