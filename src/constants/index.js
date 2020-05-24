@@ -43,3 +43,5 @@ export const PIECE_VISUALS = {
     [KEYS.WHITE]: '\u2659'
   }
 }
+
+export const USER_COLOR = KEYS.BLACK

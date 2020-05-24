@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import {
   PIECE_VISUALS,
-  KEYS
+  KEYS,
+  USER_COLOR
 } from '../constants'
 
 import {
@@ -28,26 +29,34 @@ export default function Piece({ file, rank, type, color }) {
     return null
   }
 
-  const moves = movesBySquare[`${file}${rank}`]
   const typeName = piecesBySymbol[type]
   const colorName = colorsBySymbol[color]
 
+  let moves = null
+
+  if (colorName === USER_COLOR) {
+    moves = movesBySquare[`${file}${rank}`]
+  }
+
+  const visual = PIECE_VISUALS[typeName][colorName]
+  const ariaLabel = `${colorName} ${typeName} on ${file.toUpperCase()} ${rank}`
   const className = `chess-board-piece${
     colorName === BLACK ? ' chess-board-piece--black' : ''
   }`
 
-  const ariaLabel = `${colorName} ${typeName} on ${file.toUpperCase()} ${rank}`
-  const disabled = moves?.length === 0
+  const enabled = (
+    moves?.length > 0
+  )
+
   const onClick = () => console.log(moves)
-  const piece = PIECE_VISUALS[typeName][colorName]
 
   return (
     <button
       className={className}
       aria-label={ariaLabel}
-      disabled={disabled}
+      disabled={!enabled}
       onClick={onClick}>
-      {piece}
+      {visual}
     </button>
   )
 }
