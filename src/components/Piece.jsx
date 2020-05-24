@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
-  PIECE_SYMBOLS,
+  PIECE_VISUALS,
   KEYS
 } from '../constants'
 
@@ -36,14 +36,18 @@ export default function Piece({ file, rank, type, color }) {
     colorName === BLACK ? ' chess-board-piece--black' : ''
   }`
 
+  const ariaLabel = `${colorName} ${typeName} on ${file.toUpperCase()} ${rank}`
+  const disabled = moves?.length === 0
+  const onClick = () => console.log(moves)
+  const piece = PIECE_VISUALS[typeName][colorName]
+
   return (
     <button
-      data-square={`${file}${rank}`}
-      disabled={moves?.length === 0}
-      onClick={() => console.log(moves)}
       className={className}
-      aria-label={`${colorName} ${typeName} on ${file.toUpperCase()} ${rank}`}>
-      {PIECE_SYMBOLS[typeName][colorName]}
+      aria-label={ariaLabel}
+      disabled={disabled}
+      onClick={onClick}>
+      {piece}
     </button>
   )
 }

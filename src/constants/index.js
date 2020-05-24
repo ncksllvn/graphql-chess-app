@@ -17,7 +17,7 @@ export const KEYS = {
   PAWN: 'PAWN',
 }
 
-export const PIECE_SYMBOLS = {
+export const PIECE_VISUALS = {
   [KEYS.KING]: {
     [KEYS.BLACK]: '\u265A',
     [KEYS.WHITE]: '\u2654'
