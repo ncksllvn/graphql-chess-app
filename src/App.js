@@ -11,15 +11,14 @@ class App extends React.Component {
 
   render() {
     const {
-      appStatus: { loading, errors },
-      chess
+      appStatus: { loading, errors }
     } = this.props
 
     return (
       <>
         {loading && <div className="chess-loading">Contacting server...</div>}
         {errors && <code>{JSON.stringify(errors)}</code>}
-        {!loading && !errors && <Board board={chess.board}/>}
+        <Board/>
       </>
     );
   }

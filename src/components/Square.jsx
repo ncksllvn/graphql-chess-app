@@ -7,7 +7,7 @@ export default function Square({ file, rank, dark, piece: pieceProps }) {
   }`
 
   return (
-    <div className={className}>
+    <div data-square={`${file}${rank}`} className={className}>
       <Piece file={file} rank={rank} {...pieceProps}/>
     </div>
   )
