@@ -1,12 +1,14 @@
 :root {
-  --dark-accent-color: chocolate;
-  --light-accent-color: antiquewhite;
+  /* color: dar */
+  --dark-accent-color: darkgoldenrod;
+  --light-accent-color: tan;
+  /* color: ta */
   --app-width: 88vmin;
   --square-width: calc(var(--app-width) / 8);
 }
 
 body {
-  background-color: tan;
+  background-color: blanchedalmond;
 }
 
 .chess-container {
@@ -26,22 +28,28 @@ body {
 
 .chess-board-square {
   background-color: var(--light-accent-color);
-  min-width: 0;
-  /* box-shadow:
-    inset -1px -1px #0a0a0a,
-    inset 1px 1px #fff,
-    inset -2px -2px grey,
-    inset 2px 2px #dfdfdf; */
-}
-
-.chess-board-square:not(:disabled):active {
-  /* box-shadow:
-    inset -1px -1px #fff,
-    inset 1px 1px #0a0a0a,
-    inset -2px -2px #dfdfdf,
-    inset 2px 2px grey; */
 }
 
 .chess-board-square--dark {
   background-color: var(--dark-accent-color);
+}
+
+.chess-board-piece {
+  --gutter: calc(var(--square-width) * 0.2);
+  --width: calc(var(--square-width) - var(--gutter));
+  font-size: calc(var(--square-width) * 0.6);
+  width: var(--width);
+  height: var(--width);
+  margin: calc(var(--gutter) / 2);
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.chess-board-piece:active {
+  outline-style: inset;
+}
+
+.chess-board-piece--black {
+  color: black;
 }
