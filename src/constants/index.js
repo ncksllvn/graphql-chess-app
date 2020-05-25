@@ -6,6 +6,12 @@ export const CHESS_AND_CONSTANTS = {
   FAILURE: 'chess-and-constants/FAILURE'
 }
 
+export const MOVE = {
+  REQUEST: 'move/REQUEST',
+  RECEIVE: 'move/RECEIVE',
+  FAILURE: 'move/FAILURE'
+}
+
 export const PIECE_SELECTED = 'PIECE_SELECTED'
 
 export const KEYS = {

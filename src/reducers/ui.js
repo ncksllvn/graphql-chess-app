@@ -1,5 +1,6 @@
 import {
-  PIECE_SELECTED
+  PIECE_SELECTED,
+  MOVE
 } from '../constants'
 
 const initialState = {
@@ -16,6 +17,10 @@ export default function userInteractions(state = initialState, action) {
       }
 
       return { ...state, selectedPiece }
+    }
+
+    case MOVE.RECEIVE: {
+      return { ...state, selectedPiece: null }
     }
 
     default:

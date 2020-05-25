@@ -1,5 +1,6 @@
 import {
-  CHESS_AND_CONSTANTS
+  CHESS_AND_CONSTANTS,
+  MOVE
 } from '../constants'
 
 function mapChessDataToState(chess) {
@@ -15,7 +16,7 @@ function mapChessDataToState(chess) {
   const squares = chess.board
     // Sort from Rank 8 to Rank 1 descending so
     // that A1 the bottom-left corner of the user view.
-    .sort(( row1, row2 ) => row2.rank - row1.rank)
+    // .sort(( row1, row2 ) => row2.rank - row1.rank)
     .reduce((list, { rank, squares }) => {
         const  squareData = squares
           .map(({ file, piece }, index) => {
@@ -35,6 +36,7 @@ function mapChessDataToState(chess) {
 export default function chess(state = null, action) {
   switch (action.type) {
     case CHESS_AND_CONSTANTS.RECEIVE:
+    case MOVE.RECEIVE:
       return mapChessDataToState(action.data.chess)
 
     default:

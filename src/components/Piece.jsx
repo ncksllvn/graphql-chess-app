@@ -40,16 +40,16 @@ export default function Piece({ squareId, type, color }) {
   let enabled = false
   let ariaLabel = `${squareId.toUpperCase()} contains a ${colorName} ${typeName}`
 
-  if (colorName === USER_COLOR) {
+  // if (colorName === USER_COLOR) {
     moves = movesBySquare[squareId]
     if (moves?.length > 0) {
       enabled = true
-      onClick = () => dispatch(pieceSelected({ squareId, moves }))
-      ariaLabel = `Move ${typeName} on ${squareId.toUpperCase()}`
+      onClick = () => dispatch(pieceSelected({ squareId }))
+      ariaLabel = `Move ${colorName} ${typeName} on ${squareId.toUpperCase()}`
     }
-  } else {
-    NodeType = 'span'
-  }
+  // } else {
+  //   NodeType = 'span'
+  // }
 
   const visual = PIECE_VISUALS[typeName][colorName]
   const className = `chess-board-piece${
@@ -62,7 +62,9 @@ export default function Piece({ squareId, type, color }) {
       aria-label={ariaLabel}
       disabled={!enabled}
       onClick={onClick}>
-      {visual}
+      {visual && (
+        <span role="presentation">{visual}</span>
+      )}
     </NodeType>
   )
 }

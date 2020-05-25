@@ -15,10 +15,11 @@ export default () => next => async action => {
 
   const {
     query,
+    variables,
     types: [request, receive, failure]
   } = action[CALL_API]
 
-  const queryOptions = { query, variables: '' }
+  const queryOptions = { query, variables }
   const body = JSON.stringify(queryOptions)
   const options = { method, headers, body }
 

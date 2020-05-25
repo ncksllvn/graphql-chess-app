@@ -66,3 +66,16 @@ export const GET_CONSTANTS_AND_CHESS = `
     }
   }
 `
+
+export const MAKE_MOVE = `
+  ${CHESS_FRAGMENT}
+
+  mutation makeMove($fen: String!, $move: MoveObjectInput!){
+    chess: move (input: {
+      fen: $fen,
+      move: $move
+    }) {
+      ... ChessAttributes
+    }
+  }
+`
