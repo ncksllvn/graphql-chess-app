@@ -14,8 +14,12 @@ export default function Square({
     classNames.push('chess-board-square--dark')
   }
 
-  if (isActive || isTargeted) {
+  if (isTargeted) {
     classNames.push('chess-board-square--destination')
+  }
+
+  if (isActive) {
+    classNames.push('chess-board-square--active')
   }
 
   return (
