@@ -1,54 +1,24 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 
-import { moveInitiated } from '../actions'
-import Piece from './Piece'
+export default function Square({
+  dark,
+  isActive,
+  isTargeted,
+  onClick,
+  children
+}) {
 
-export default function Square({ file, rank, dark, piece: pieceProps }) {
-  const {
-    fen,
-    movesBySquare
-  } = useSelector(state => state.chess)
+  let classNames = ['chess-board-square']
 
-  const {
-    selectedPiece
-  } = useSelector(state => state.ui)
+  if (dark) {
+    classNames.push('chess-board-square--dark')
+  }
 
-  const dispatch = useDispatch()
-
-  let NodeType = 'div'
-  let className = `chess-board-square ${
-    dark ? 'chess-board-square--dark' : ''
-  }`
-  let otherProps = {}
-
-  const squareId = `${file}${rank}`
-
-  if (selectedPiece) {
-    const moves = movesBySquare[selectedPiece.squareId]
-    const thisSquareContainsSelectedPiece = (
-      squareId === moves[0].from
-    )
-
-    const moveThatTargetsThisSquare = moves.find(
-      move => move.to === squareId
-    )
-
-    if (moveThatTargetsThisSquare || thisSquareContainsSelectedPiece) {
-      className += ' chess-board-square--destination'
-    }
-
-    if (moveThatTargetsThisSquare) {
-      NodeType = 'button'
-      otherProps.onClick = () =>
-        dispatch(moveInitiated(fen, moveThatTargetsThisSquare)
-      )
-    }
+  if (isActive || isTargeted) {
+    classNames.push('chess-board-square--destination')
   }
 
   return (
-    <NodeType className={className} {...otherProps}>
-      <Piece squareId={squareId} {...pieceProps}/>
-    </NodeType>
+    <button className={classNames.join(' ')} onClick={onClick}>{children}</button>
   )
 }

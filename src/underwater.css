@@ -38,22 +38,15 @@ html {
   background-color: rgba(181,254,182, 0.7) !important;
 }
 
-.chess-board-piece:focus, .chess-board-square--destination:focus {
+.chess-board-square:focus,
+.chess-board-square:active {
   position: relative;
   z-index: 2;
 }
 
 .chess-board-piece {
   font-size: calc(var(--square-width) * 0.6);
-  width: var(--square-width);
-  height: var(--square-width);
-  margin: calc(var(--gutter) / 2);
-  padding: 0;
-  background: none;
-  border: none;
   color: white;
-  display: block;
-  text-align: center;
 }
 
 .chess-board-piece--black {

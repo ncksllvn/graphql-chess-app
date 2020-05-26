@@ -3,8 +3,8 @@ import {
   MOVE
 } from '../constants'
 
-function mapChessDataToState(chess) {
-  const movesBySquare = chess.moves
+function generateMovesBySquare(chess) {
+  return chess.moves
     .reduce((result, nextMove) => {
       const movesForSquare = result[nextMove.from] || []
       return {
@@ -12,8 +12,10 @@ function mapChessDataToState(chess) {
         [nextMove.from]: [...movesForSquare, nextMove]
       }
     }, {})
+}
 
-  const squares = chess.board
+function generateSquares(chess) {
+  return chess.board
     .reduce((list, { rank, squares }) => {
         const  squareData = squares
           .map(({ file, piece }, index) => {
@@ -22,6 +24,11 @@ function mapChessDataToState(chess) {
           })
         return list.concat(squareData)
       }, [])
+}
+
+function mapChessDataToState(chess) {
+  const movesBySquare = generateMovesBySquare(chess)
+  const squares = generateSquares(chess)
 
   return {
     ...chess,
