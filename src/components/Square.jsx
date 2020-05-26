@@ -19,6 +19,11 @@ export default function Square({
   }
 
   return (
-    <button className={classNames.join(' ')} onClick={onClick}>{children}</button>
+    <button
+      disabled={!onClick}
+      className={classNames.join(' ')}
+      onClick={onClick}>
+      {children}
+    </button>
   )
 }
