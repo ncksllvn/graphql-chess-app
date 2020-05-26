@@ -26,7 +26,7 @@ export default function Board() {
   } = constants
 
   const {
-    selectedPiece
+    selectedSquareId
   }  = ui
 
   const {
@@ -35,15 +35,14 @@ export default function Board() {
     movesBySquare
   } = chess
 
-  let movesForSelectedPiece = []
+  let movesForSelection = null
   let targets = null
-  let moveInitiator = null
 
-  if (selectedPiece) {
-    movesForSelectedPiece = movesBySquare[selectedPiece.squareId]
-    moveInitiator = movesForSelectedPiece[0].from
+  if (selectedSquareId) {
+    movesForSelection = movesBySquare[selectedSquareId]
+    console.log(selectedSquareId)
     targets = new Set(
-      movesForSelectedPiece.map(move => move.to)
+      movesForSelection.map(move => move.to)
     )
   }
 
@@ -51,31 +50,38 @@ export default function Board() {
     <div className="chess-board">
       {squares.map(({ rank, file, piece, dark }) => {
         const squareId = `${file}${rank}`
+
         let moves = null
         let typeName = null
         let colorName = null
         let isTargeted = false
         let isActive = false
         let onClick = null
+        let ariaLabel = `${squareId} is empty`
+        let pieceTitle = null
 
         if (piece) {
           typeName = piecesBySymbol[piece.type]
           colorName = colorsBySymbol[piece.color]
+          pieceTitle = `${colorName} ${typeName}`.toLowerCase()
           moves = movesBySquare[squareId]
+          ariaLabel = `${squareId} contains a ${pieceTitle}`
 
           if (moves?.length > 0) {
-            onClick = () => dispatch(pieceSelected({ squareId }))
+            onClick = () => dispatch(pieceSelected(squareId))
           }
         }
 
-        if (squareId === moveInitiator) {
+        if (squareId === selectedSquareId) {
           isActive = true
+          ariaLabel = `${squareId} contains a ${pieceTitle} selected for move. Cancel selection.`
         } else if (targets?.has(squareId)) {
           isTargeted = true
+          ariaLabel = `Move to ${squareId}`
           onClick = () => {
             // @todo If there is a promotion flag,
             // default it to QUEEN
-            const { from, to, promotion } = movesForSelectedPiece
+            const { from, to, promotion } = movesForSelection
               .find(move => move.to === squareId)
 
             const move = { from, to, promotion }
@@ -88,6 +94,7 @@ export default function Board() {
           dark,
           isActive,
           isTargeted,
+          ariaLabel,
           onClick
         }
 

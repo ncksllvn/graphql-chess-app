@@ -5,6 +5,7 @@ export default function Square({
   isActive,
   isTargeted,
   onClick,
+  ariaLabel,
   children
 }) {
 
@@ -24,6 +25,7 @@ export default function Square({
 
   return (
     <button
+      aria-label={ariaLabel}
       disabled={!onClick}
       className={classNames.join(' ')}
       onClick={onClick}>

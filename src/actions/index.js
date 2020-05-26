@@ -23,8 +23,8 @@ export function startApp() {
   }
 }
 
-export function pieceSelected(piece) {
-  return { type: PIECE_SELECTED, piece }
+export function pieceSelected(squareId) {
+  return { type: PIECE_SELECTED, squareId }
 }
 
 export function moveInitiated(fen, move) {

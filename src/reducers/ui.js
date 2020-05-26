@@ -4,23 +4,23 @@ import {
 } from '../constants'
 
 const initialState = {
-  selectedPiece: null
+  selectedSquareId: null
 }
 
 export default function userInteractions(state = initialState, action) {
   switch (action.type) {
     case PIECE_SELECTED: {
-      const selectedPiece = action.piece
+      const selectedSquareId = action.squareId
 
-      if (selectedPiece.squareId === state.selectedPiece?.squareId) {
-        return { ...state, selectedPiece: null }
+      if (selectedSquareId === state.selectedSquareId) {
+        return { ...state, selectedSquareId: null }
       }
 
-      return { ...state, selectedPiece }
+      return { ...state, selectedSquareId }
     }
 
     case MOVE.RECEIVE: {
-      return { ...state, selectedPiece: null }
+      return { ...state, selectedSquareId: null }
     }
 
     default:
