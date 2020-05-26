@@ -34,7 +34,7 @@ html {
   background-color: var(--dark-accent-color);
 }
 
-.chess-board-square--destination, .chess-board-square--active {
+.chess-board-square--targeted, .chess-board-square--active {
   background-color: rgba(181,254,182, 0.7) !important;
 }
 

@@ -15,7 +15,7 @@ export default function Square({
   }
 
   if (isTargeted) {
-    classNames.push('chess-board-square--destination')
+    classNames.push('chess-board-square--targeted')
   }
 
   if (isActive) {

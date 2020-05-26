@@ -51,11 +51,11 @@ export default function Board() {
     <div className="chess-board">
       {squares.map(({ rank, file, piece, dark }) => {
         const squareId = `${file}${rank}`
-
         let moves = null
         let typeName = null
         let colorName = null
         let isTargeted = false
+        let isActive = false
         let onClick = null
 
         if (piece) {
@@ -68,13 +68,13 @@ export default function Board() {
           }
         }
 
-        const isActive = (
-          squareId === moveInitiator
-        )
-
-        if (targets?.has(squareId)) {
+        if (squareId === moveInitiator) {
+          isActive = true
+        } else if (targets?.has(squareId)) {
           isTargeted = true
           onClick = () => {
+            // @todo If there is a promotion flag,
+            // default it to QUEEN
             const move = movesForSelectedPiece.find(
               move => move.to === squareId
             )
