@@ -6,6 +6,10 @@ import {
   pieceSelected
 } from '../actions'
 
+import {
+  KEYS
+} from '../constants'
+
 import Square from './Square'
 import Piece from './Piece'
 
@@ -21,7 +25,8 @@ export default function Board() {
 
   const {
     piecesBySymbol,
-    colorsBySymbol
+    colorsBySymbol,
+    pieceConstants
   } = constants
 
   const {
@@ -80,10 +85,12 @@ export default function Board() {
             isTargeted = true
             ariaLabel = `Move to ${squareId}`
             onClick = () => {
-              // @todo If there is a promotion flag,
-              // default it to QUEEN
-              const { from, to, promotion } = movesForSelection
+              let { from, to, promotion } = movesForSelection
                 .find(move => move.to === squareId)
+
+              if (promotion) {
+                promotion = pieceConstants[KEYS.QUEEN]
+              }
 
               const move = { from, to, promotion }
               dispatch(moveInitiated(fen, move))

@@ -23,6 +23,7 @@ export const KEYS = {
   BISHOP: 'BISHOP',
   KNIGHT: 'KNIGHT',
   PAWN: 'PAWN',
+  FLAGS: 'FLAGS'
 }
 
 export const PIECE_VISUALS = {
