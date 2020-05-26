@@ -40,7 +40,6 @@ export default function Board() {
 
   if (selectedSquareId) {
     movesForSelection = movesBySquare[selectedSquareId]
-    console.log(selectedSquareId)
     targets = new Set(
       movesForSelection.map(move => move.to)
     )
