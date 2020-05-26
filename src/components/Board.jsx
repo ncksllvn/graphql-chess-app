@@ -7,7 +7,6 @@ import {
 } from '../actions'
 
 import Square from './Square'
-// import Move from './Move'
 import Piece from './Piece'
 
 export default function Board() {
@@ -69,22 +68,33 @@ export default function Board() {
           if (moves?.length > 0) {
             onClick = () => dispatch(pieceSelected(squareId))
           }
+
+          if (squareId === selectedSquareId) {
+            isActive = true
+            ariaLabel = `${squareId} contains a ${pieceTitle} selected for move. Cancel selection.`
+          }
         }
 
-        if (squareId === selectedSquareId) {
-          isActive = true
-          ariaLabel = `${squareId} contains a ${pieceTitle} selected for move. Cancel selection.`
-        } else if (targets?.has(squareId)) {
-          isTargeted = true
-          ariaLabel = `Move to ${squareId}`
-          onClick = () => {
-            // @todo If there is a promotion flag,
-            // default it to QUEEN
-            const { from, to, promotion } = movesForSelection
-              .find(move => move.to === squareId)
+        if (selectedSquareId) {
+          if (squareId === selectedSquareId) {
+            isActive = true
+            ariaLabel = `${squareId} contains a ${pieceTitle} selected for move.${' '
+            } Use the tab keys to select a square to initiate move.${' '
+            } Press again to cancel selection.`
+          } else if (targets?.has(squareId)) {
+            isTargeted = true
+            ariaLabel = `Move to ${squareId}`
+            onClick = () => {
+              // @todo If there is a promotion flag,
+              // default it to QUEEN
+              const { from, to, promotion } = movesForSelection
+                .find(move => move.to === squareId)
 
-            const move = { from, to, promotion }
-            dispatch(moveInitiated(fen, move))
+              const move = { from, to, promotion }
+              dispatch(moveInitiated(fen, move))
+            }
+          } else {
+            onClick = null
           }
         }
 
