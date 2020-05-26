@@ -36,9 +36,15 @@ export default function Board() {
   } = chess
 
   let movesForSelectedPiece = []
+  let targets = null
+  let moveInitiator = null
 
   if (selectedPiece) {
     movesForSelectedPiece = movesBySquare[selectedPiece.squareId]
+    moveInitiator = movesForSelectedPiece[0].from
+    targets = new Set(
+      movesForSelectedPiece.map(move => move.to)
+    )
   }
 
   return (
@@ -49,10 +55,8 @@ export default function Board() {
         let moves = null
         let typeName = null
         let colorName = null
-        let isActive = false
         let isTargeted = false
         let onClick = null
-        let enabled = false
 
         if (piece) {
           typeName = piecesBySymbol[piece.type]
@@ -60,26 +64,22 @@ export default function Board() {
           moves = movesBySquare[squareId]
 
           if (moves?.length > 0) {
-            enabled = true
             onClick = () => dispatch(pieceSelected({ squareId }))
           }
         }
 
-        if (movesForSelectedPiece.length > 0) {
-          isActive = (
-            squareId === movesForSelectedPiece[0].from
-          )
+        const isActive = (
+          squareId === moveInitiator
+        )
 
-          const possibleMoveTargetingThisSquare =
-            movesForSelectedPiece.find(move => move.to === squareId)
-
-          if (possibleMoveTargetingThisSquare) {
-            isTargeted = true
-            onClick = () => dispatch(
-              moveInitiated(fen, possibleMoveTargetingThisSquare)
+        if (targets?.has(squareId)) {
+          isTargeted = true
+          onClick = () => {
+            const move = movesForSelectedPiece.find(
+              move => move.to === squareId
             )
+            dispatch(moveInitiated(fen, move))
           }
-
         }
 
         const props = {
