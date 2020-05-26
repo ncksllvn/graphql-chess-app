@@ -23,7 +23,10 @@ export default () => next => async action => {
   const body = JSON.stringify(queryOptions)
   const options = { method, headers, body }
 
-  next({ type: request })
+  next({
+    type: request,
+    data: { query, variables }
+  })
 
   try {
     const response = await fetch(serverUrl, options)
