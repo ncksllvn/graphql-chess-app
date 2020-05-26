@@ -25,6 +25,7 @@ export default function Square({
 
   return (
     <button
+      type="button"
       aria-label={ariaLabel}
       disabled={!onClick}
       className={classNames.join(' ')}
