@@ -68,11 +68,6 @@ export default function Board() {
           if (moves?.length > 0) {
             onClick = () => dispatch(pieceSelected(squareId))
           }
-
-          if (squareId === selectedSquareId) {
-            isActive = true
-            ariaLabel = `${squareId} contains a ${pieceTitle} selected for move. Cancel selection.`
-          }
         }
 
         if (selectedSquareId) {
