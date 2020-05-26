@@ -27,13 +27,13 @@ export function pieceSelected(piece) {
   return { type: PIECE_SELECTED, piece }
 }
 
-export function moveInitiated(fen, { from, to }) {
+export function moveInitiated(fen, move) {
   return {
     [CALL_API]: {
       query: MAKE_MOVE,
       variables: {
         fen,
-        move: { from, to }
+        move
       },
       types: [
         MOVE.REQUEST,

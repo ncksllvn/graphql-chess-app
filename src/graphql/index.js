@@ -30,6 +30,7 @@ const CHESS_FRAGMENT = `
         from
         to
         promotion
+        flags
       }
       turn
   }
@@ -52,6 +53,18 @@ export const GET_CONSTANTS_AND_CHESS = `
     ROOK
   }
 
+  fragment FlagConstants on Constants {
+    FLAGS {
+      NORMAL
+      CAPTURE
+      BIG_PAWN
+      EP_CAPTURE
+      PROMOTION
+      KSIDE_CASTLE
+      QSIDE_CASTLE
+    }
+  }
+
   {
     chess {
       ... ChessAttributes
@@ -63,6 +76,10 @@ export const GET_CONSTANTS_AND_CHESS = `
 
     pieceConstants: constants {
       ... PieceConstants
+    }
+
+    flagConstants: constants {
+      ... FlagConstants
     }
   }
 `

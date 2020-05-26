@@ -7,7 +7,8 @@ export default function constants(state = null, action) {
     case CHESS_AND_CONSTANTS.RECEIVE: {
       const {
         pieceConstants,
-        colorConstants
+        colorConstants,
+        flagConstants
       } = action.data
 
       const piecesBySymbol = Object.entries(pieceConstants).reduce(
@@ -28,7 +29,13 @@ export default function constants(state = null, action) {
         }
       , {})
 
-      return { piecesBySymbol, colorsBySymbol }
+      return {
+        piecesBySymbol,
+        colorsBySymbol,
+        pieceConstants,
+        colorConstants,
+        flagConstants
+      }
     }
 
     default:

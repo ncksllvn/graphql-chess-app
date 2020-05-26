@@ -75,9 +75,10 @@ export default function Board() {
           onClick = () => {
             // @todo If there is a promotion flag,
             // default it to QUEEN
-            const move = movesForSelectedPiece.find(
-              move => move.to === squareId
-            )
+            const { from, to, promotion } = movesForSelectedPiece
+              .find(move => move.to === squareId)
+
+            const move = { from, to, promotion }
             dispatch(moveInitiated(fen, move))
           }
         }
