@@ -16,7 +16,7 @@ html {
 
 .chess-container {
   margin: 0 auto;
-  width: calc(var(--app-width) + 16px);
+  width: var(--app-width);
   position: relative;
 }
 
