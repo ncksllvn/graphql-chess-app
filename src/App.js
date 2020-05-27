@@ -1,38 +1,21 @@
-import React from 'react';
-import { connect } from 'react-redux'
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux'
 
 import Board from './components/Board'
+import Spinner from './components/Spinner'
 import { startApp } from './actions'
 
-class App extends React.Component {
-  componentDidMount() {
-    this.props.startApp()
-  }
+export default function App() {
+  const dispatch = useDispatch()
 
-  render() {
-    const {
-      appStatus: { loading, errors }
-    } = this.props
+  useEffect(() => {
+    dispatch(startApp())
+  }, [dispatch])
 
-    return (
-      <>
-        {loading && <div className="chess-loading">Contacting server...</div>}
-        {errors && <code>{JSON.stringify(errors)}</code>}
-        <Board/>
-      </>
-    );
-  }
+  return (
+    <>
+      <Board/>
+      <Spinner/>
+    </>
+  );
 }
-
-const mapStateToProps = state => {
-  return {
-    appStatus: state.appStatus,
-    chess: state.chess
-  }
-}
-const mapDispatchToProps = {
-  startApp
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
-export { App };
