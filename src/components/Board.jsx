@@ -96,7 +96,10 @@ export default function Board() {
               dispatch(moveInitiated(fen, move))
             }
           } else {
-            onClick = null
+            // @todo Forcing onClick to null is helpful so that you can
+            // tab to initiate moves, but it's confusing that you have
+            // to unselect the active piece before selecting a new piece.
+            // onClick = null
           }
         }
 
