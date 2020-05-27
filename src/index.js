@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // import '98.css'
 import './style/index.css';
+import './style/breakpoints.css';
 import './style/spinner.css';
 
 import App from './App';

@@ -1,5 +1,5 @@
 :root {
-  --app-width: 88vmin;
+  --app-width: 350px;
   --square-width: calc(var(--app-width) / 8);
   --spinner-width: calc(var(--app-width) / 20);
   --light-accent-color: #d6c58a;
@@ -10,11 +10,6 @@
 html {
   height: 100%;
   background-color: mediumaquamarine;
-  /* background-color: #38FED2;
-  background-position: left bottom;
-  background-size: auto 100%;
-  background-image: url(/underwater.png);
-  background-repeat: repeat-x; */
 }
 
 .chess-container {
