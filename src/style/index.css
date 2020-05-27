@@ -1,17 +1,20 @@
 :root {
   --app-width: 88vmin;
   --square-width: calc(var(--app-width) / 8);
-  --light-accent-color: rgba(214,197,138, 0.7);
-  --dark-accent-color: rgba(161,132,88, 0.7);
+  --spinner-width: calc(var(--app-width) / 20);
+  --light-accent-color: #d6c58a;
+  --dark-accent-color: rgb(161, 132, 88);
+  --highlight-color: palegreen;
 }
 
 html {
   height: 100%;
-  background-color: #38FED2;
+  background-color: mediumaquamarine;
+  /* background-color: #38FED2;
   background-position: left bottom;
   background-size: auto 100%;
   background-image: url(/underwater.png);
-  background-repeat: repeat-x;
+  background-repeat: repeat-x; */
 }
 
 .chess-container {
@@ -27,7 +30,7 @@ html {
 }
 
 .chess-board-square {
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid #ccc;
   background-color: var(--light-accent-color)
 }
 
@@ -36,12 +39,12 @@ html {
 }
 
 .chess-board-square--targeted, .chess-board-square--active {
-  background-color: rgba(181,254,182, 0.7) !important;
+  background-color: var(--highlight-color);
 }
 
-.chess-board-square--active {
+.chess-board-square--active, .chess-board-square:active {
   border-style: inset;
-  border-width: 2px;
+  border-width: 4px;
 }
 
 .chess-board-square:focus,
@@ -57,8 +60,4 @@ html {
 
 .chess-board-piece--black {
   color: black;
-}
-
-.chess-board-piece--selected {
-  background-color: rgba(41,253,46, 0.7) !important;
 }

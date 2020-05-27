@@ -5,7 +5,9 @@ import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // import '98.css'
-import './underwater.css';
+import './style/index.css';
+import './style/spinner.css';
+
 import App from './App';
 import reducers from './reducers'
 import api from './middleware/api'
