@@ -6,6 +6,11 @@ const CHESS_FRAGMENT = `
           to
           flags
         }
+        ponderMove {
+          from
+          to
+          flags
+        }
       }
       board {
         rank
