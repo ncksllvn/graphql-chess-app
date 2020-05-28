@@ -1,4 +1,5 @@
 import React from 'react'
+import Piece from './Piece'
 
 export default function Square({
   dark,
@@ -6,7 +7,7 @@ export default function Square({
   isTargeted,
   onClick,
   ariaLabel,
-  children
+  piece
 }) {
 
   let classNames = ['chess-board-square']
@@ -30,7 +31,11 @@ export default function Square({
       disabled={!onClick}
       className={classNames.join(' ')}
       onClick={onClick}>
-      {children}
+      {piece && (
+        <Piece
+          typeName={piece.typeName}
+          colorName={piece.colorName}/>
+      )}
     </button>
   )
 }

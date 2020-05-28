@@ -11,7 +11,6 @@ import {
 } from '../constants'
 
 import Square from './Square'
-import Piece from './Piece'
 
 export default function Board() {
   const dispatch = useDispatch()
@@ -109,15 +108,12 @@ export default function Board() {
           isActive,
           isTargeted,
           ariaLabel,
+          piece: piece && { typeName, colorName },
           onClick
         }
 
         return (
-          <Square {...props}>
-            {piece && (
-              <Piece typeName={typeName} colorName={colorName}/>
-            )}
-          </Square>
+          <Square {...props}/>
         )
       })}
     </div>
