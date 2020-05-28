@@ -49,7 +49,7 @@ export default function Board() {
     )
   }
 
-  const classNames= ["chess-board"]
+  const classNames= ['chess-board']
 
   if (colorsBySymbol[turn] === KEYS.BLACK) {
     classNames.push('chess-board--black-turn')
