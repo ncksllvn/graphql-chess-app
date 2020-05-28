@@ -35,21 +35,28 @@ export default function Board() {
   const {
     fen,
     squares,
-    movesBySquare
+    movesBySquare,
+    turn
   } = chess
 
-  let movesForSelection = null
-  let targets = null
+  let selectedPieceMoves = null
+  let selectedPieceTargetedSquareIds = null
 
   if (selectedSquareId) {
-    movesForSelection = movesBySquare[selectedSquareId]
-    targets = new Set(
-      movesForSelection.map(move => move.to)
+    selectedPieceMoves = movesBySquare[selectedSquareId]
+    selectedPieceTargetedSquareIds = new Set(
+      selectedPieceMoves.map(move => move.to)
     )
   }
 
+  const classNames= ["chess-board"]
+
+  if (colorsBySymbol[turn] === KEYS.BLACK) {
+    classNames.push('chess-board--black-turn')
+  }
+
   return (
-    <div className="chess-board">
+    <div className={classNames.join(' ')}>
       {squares.map(({ rank, file, piece, dark }) => {
         const squareId = `${file}${rank}`
 
@@ -80,11 +87,11 @@ export default function Board() {
             ariaLabel = `${squareId} contains a ${pieceTitle} selected for move.${' '
             } Use the tab keys to select a square to initiate move.${' '
             } Press again to cancel selection.`
-          } else if (targets?.has(squareId)) {
+          } else if (selectedPieceTargetedSquareIds?.has(squareId)) {
             isTargeted = true
             ariaLabel = `Move to ${squareId}`
             onClick = () => {
-              let { from, to, promotion } = movesForSelection
+              let { from, to, promotion } = selectedPieceMoves
                 .find(move => move.to === squareId)
 
               if (promotion) {

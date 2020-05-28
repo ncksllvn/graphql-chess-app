@@ -5,6 +5,7 @@
   --light-accent-color: #d6c58a;
   --dark-accent-color: rgb(161, 132, 88);
   --highlight-color: palegreen;
+  --highlight-color-alt: orangered;
 }
 
 html {
@@ -22,6 +23,10 @@ html {
   display: grid;
   grid-template-rows: repeat(8, var(--square-width));
   grid-template-columns: repeat(8, var(--square-width));
+}
+
+.chess-board--black-turn {
+  --highlight-color: var(--highlight-color-alt);
 }
 
 .chess-board-square {
