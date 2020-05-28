@@ -4,10 +4,13 @@ import {
 } from '../constants'
 
 import {
+  pieceSelected,
   moveInitiated
 } from '../actions'
 
-export default store => next => action => {
+const aiMoveDelay = 1000
+
+export default store => next => async action => {
   next(action)
 
   if (action.type === MOVE.RECEIVE) {
@@ -25,6 +28,8 @@ export default store => next => action => {
     } = store.getState()
 
     if (turn === colorConstants[AI_COLOR]) {
+      store.dispatch(pieceSelected(from))
+      await new Promise(resolve => setTimeout(resolve, aiMoveDelay))
       store.dispatch(moveInitiated(fen, { from, to }))
     }
   }
