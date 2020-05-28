@@ -1,6 +1,6 @@
 # Todo
 - [x] Spruce up App.js
-- [ ] Add middleware to power the AI
+- [x] Add middleware to power the AI
 - [ ] Add a log into the UI to record game history and for controls (undo, restart)
 - [x] Add a loading indicator
 - [ ] Capture the FEN string in the URL
