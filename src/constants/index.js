@@ -53,4 +53,5 @@ export const PIECE_VISUALS = {
   }
 }
 
-export const USER_COLOR = KEYS.BLACK
+export const USER_COLOR = KEYS.WHITE
+export const AI_COLOR = KEYS.BLACK
