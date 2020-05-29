@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 
+import { startApp } from './actions'
+
 import Board from './components/Board'
 import Spinner from './components/Spinner'
-import { startApp } from './actions'
+import Console from './components/Console'
 
 export default function App() {
   const dispatch = useDispatch()
@@ -15,6 +17,7 @@ export default function App() {
   return (
     <>
       <Board/>
+      <Console/>
       <Spinner/>
     </>
   );

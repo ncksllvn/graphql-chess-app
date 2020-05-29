@@ -67,3 +67,19 @@ html {
 .chess-board-piece--black {
   color: black;
 }
+
+.console {
+  margin: 5px 0;
+  border: var(--board-border);
+  background-color: var(--light-accent-color);
+}
+
+.console-output {
+  display: block;
+  margin: 10px;
+  padding: 10px 5px;
+  border: var(--board-border);
+  border-style: inset;
+  background-color: ivory;
+  font-family: monospace;
+}
