@@ -20,7 +20,13 @@ function generateSquares(chess) {
         const  squareData = squares
           .map(({ file, piece }, index) => {
             const dark = rank % 2 ? !(index % 2) : index % 2
-            return { rank, file, piece, dark }
+            return {
+              id: `${file}${rank}`,
+              rank,
+              file,
+              piece,
+              dark
+            }
           })
         return list.concat(squareData)
       }, [])

@@ -8,7 +8,8 @@
   --dark-accent-color: peru;
   --highlight-color: limegreen;
   --highlight-color-alt: orangered;
-  --board-border: var(--board-border-width) groove blanchedalmond;
+  --border-color: blanchedalmond;
+  --board-border: var(--board-border-width) groove var(--border-color);
 }
 
 html {
@@ -76,10 +77,10 @@ html {
 
 .console-output {
   display: block;
-  margin: 10px;
-  padding: 10px 5px;
+  margin: 5px;
+  padding: 5px 10px;
   border: var(--board-border);
   border-style: inset;
-  background-color: ivory;
+  background-color: var(--border-color);
   font-family: monospace;
 }
