@@ -33,7 +33,7 @@ export default function Board() {
     turn
   } = chess
 
-  let selected = null
+  let selectedSquare = null
 
   if (selectedSquareId) {
     let selectedPiece = chess.squares.find(
@@ -48,7 +48,7 @@ export default function Board() {
 
     let selectedPieceMoves = movesBySquare[selectedSquareId]
 
-    selected = {
+    selectedSquare = {
       squareId: selectedSquareId,
       moves: selectedPieceMoves,
       piece: selectedPiece
@@ -74,7 +74,7 @@ export default function Board() {
             colorName: colorsBySymbol[piece.color],
             ...piece
           },
-          selected,
+          selectedSquare,
           pieceConstants,
           fen
         }

@@ -16,8 +16,8 @@ export default function Square({
   squareId,
   dark,
   piece,
-  selected,
   moves,
+  selectedSquare,
   pieceConstants,
   fen
 }) {
@@ -35,9 +35,9 @@ export default function Square({
     }
   }
 
-  if (selected) {
-    isActive = squareId === selected.squareId
-    isTargeted = selected.moves.some(move => move.to === squareId)
+  if (selectedSquare) {
+    isActive = squareId === selectedSquare.squareId
+    isTargeted = selectedSquare.moves.some(move => move.to === squareId)
 
     if (isActive) {
       isActive = true
@@ -48,13 +48,13 @@ export default function Square({
     }
 
     if (isTargeted) {
-      ariaLabel = `Move ${selected.piece.typeName} on ${selected.squareId} ${
+      ariaLabel = `Move ${selectedSquare.piece.typeName} on ${selectedSquare.squareId} ${
         piece ? `to capture ${piece.typeName} on ${squareId}` : `to ${squareId}`
       }`
 
       onClick = () => {
         let { from, to, promotion } =
-          selected.moves.find(move => move.to === squareId)
+          selectedSquare.moves.find(move => move.to === squareId)
 
         if (promotion) {
           promotion = pieceConstants[KEYS.QUEEN]
