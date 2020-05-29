@@ -1,16 +1,19 @@
 :root {
   --app-width: 350px;
-  --square-width: calc(var(--app-width) / 8);
+  --board-border-width: 2px;
+  --square-width: calc((var(--app-width) - var(--board-border-width) * 2) / 8);
   --spinner-width: calc(var(--app-width) / 20);
-  --light-accent-color: #d6c58a;
-  --dark-accent-color: rgb(161, 132, 88);
-  --highlight-color: palegreen;
+  --background-color: darkseagreen; /* mediumaquamarine */
+  --light-accent-color: burlywood;
+  --dark-accent-color: peru;
+  --highlight-color: limegreen;
   --highlight-color-alt: orangered;
+  --board-border: var(--board-border-width) groove blanchedalmond;
 }
 
 html {
   height: 100%;
-  background-color: mediumaquamarine;
+  background-color: var(--background-color);
 }
 
 .chess-container {
@@ -23,6 +26,7 @@ html {
   display: grid;
   grid-template-rows: repeat(8, var(--square-width));
   grid-template-columns: repeat(8, var(--square-width));
+  border: var(--board-border);
 }
 
 .chess-board--black-turn {
@@ -30,7 +34,8 @@ html {
 }
 
 .chess-board-square {
-  border: 1px solid #ccc;
+  margin: 0;
+  border: var(--board-border);
   background-color: var(--light-accent-color)
 }
 
@@ -42,9 +47,9 @@ html {
   background-color: var(--highlight-color);
 }
 
-.chess-board-square--active, .chess-board-square:active {
+.chess-board-square--active, .chess-board-square:active, .chess-board-square:focus {
+  border-width: 3px;
   border-style: inset;
-  border-width: 4px;
 }
 
 .chess-board-square:focus,
@@ -56,6 +61,7 @@ html {
 .chess-board-piece {
   font-size: calc(var(--square-width) * 0.6);
   color: white;
+  text-shadow: slategray 0px 1px 1px;
 }
 
 .chess-board-piece--black {
