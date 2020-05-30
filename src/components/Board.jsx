@@ -27,9 +27,10 @@ export default function Board() {
 
   const moveInitiated = useCallback(
     (squareId) => {
-      let { from, to, promotion } = chess.moves
+      let { from, to, promotion } =
+        chess.moves
         .filter(
-          (move) => move.from === ui.selectedSquareId
+          (move) => move.from === ui.selectedSquare.id
         ).find(
           (move) => move.to === squareId
         )
@@ -48,29 +49,6 @@ export default function Board() {
     return <div className="chess-board--loading"/>
   }
 
-  let selection = null
-
-  if (ui.selectedSquareId) {
-    const { id, piece } = chess.squares.find(
-      (square) =>
-        square.id === ui.selectedSquareId
-    )
-
-    const typeName = constants.piecesBySymbol[piece.type]
-    const colorName = constants.colorsBySymbol[piece.color]
-    const moves = chess.movesBySquare[ui.selectedSquareId]
-    const targets = new Set(
-      moves?.map(
-        (move) => move.to
-      )
-    )
-
-    selection = {
-      square: { id, piece: { ...piece, colorName, typeName }},
-      targets
-    }
-  }
-
   const classNames= ['chess-board']
 
   if (constants.colorsBySymbol[chess.turn] === KEYS.BLACK) {
@@ -81,17 +59,21 @@ export default function Board() {
     <div className={classNames.join(' ')}>
       {chess.squares.map(({ id: squareId, piece, isDark }) => {
         const isActive = (
-          squareId === selection?.square.id
+          squareId === ui.selectedSquare?.id
         )
+
         const isTargeted = (
-          selection?.targets.has(squareId)
+          ui.selectedSquare?.targets?.includes(squareId)
         )
+
         const targetedBy = (
-          isTargeted ? selection.square : null
+          isTargeted ? ui.selectedSquare : null
         )
+
         const onClick = isTargeted ? moveInitiated : (
           piece ? pieceSelected : null
         )
+
         const pieceExpanded = piece && {
           typeName: constants.piecesBySymbol[piece.type],
           colorName: constants.colorsBySymbol[piece.color],

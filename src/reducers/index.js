@@ -7,7 +7,8 @@ import {
 import {
   generateColorsBySymbol,
   generatePiecesBySymbol,
-  mapChessDataToState
+  mapChessDataToState,
+  generateSelectedSquare
 } from './utils'
 
 const initialState = {
@@ -17,7 +18,7 @@ const initialState = {
   chess: null,
   constants: null,
   ui: {
-    selectedSquareId: null
+    selectedSquare: null
   }
 }
 
@@ -41,7 +42,7 @@ export default function reducer(state = initialState, action) {
 
       return {
         ...state,
-        ui: { selectedSquareId: null },
+        ui: { selectedSquare: null },
         appStatus: { loading: false },
         chess: mapChessDataToState(chess),
         constants: {
@@ -55,12 +56,9 @@ export default function reducer(state = initialState, action) {
     }
 
     case PIECE_SELECTED: {
-      const selectedSquareId =
-        action.squareId === state.ui.selectedSquareId ? null : action.squareId
-
       return {
         ...state,
-        ui: { selectedSquareId }
+        ui: generateSelectedSquare(state, action.squareId)
       }
     }
 
@@ -68,7 +66,7 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         appStatus: { loading: false },
-        ui: { selectedSquareId: null },
+        ui: { selectedSquare: null },
         chess: mapChessDataToState(action.data.chess)
       }
     }

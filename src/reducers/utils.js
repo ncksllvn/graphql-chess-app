@@ -56,3 +56,43 @@ export function mapChessDataToState(chess) {
     movesBySquare
   }
 }
+
+export function generateSelectedSquare(state, selectedSquareId) {
+  const canceled = (
+    selectedSquareId === state.ui.selectedSquareId
+  )
+
+  if (canceled) {
+    return {
+      ...state,
+      ui: { selectedSquareId: null }
+    }
+  }
+
+  const square = state.chess.squares.find(
+    (square) =>
+      square.id === selectedSquareId
+    )
+
+  const typeName = state.constants.piecesBySymbol[square.piece.type]
+  const colorName = state.constants.colorsBySymbol[square.piece.color]
+
+  const moves = state.chess.movesBySquare[square.id]
+  const targets = moves?.map(
+      (move) => move.to
+    )
+
+  const selectedSquare = {
+    ...square,
+    targets,
+    piece: {
+      ...square.piece,
+      typeName,
+      colorName
+    }
+  }
+
+  return {
+    selectedSquare
+  }
+}
