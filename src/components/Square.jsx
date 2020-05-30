@@ -1,7 +1,12 @@
 import React from 'react'
-import Piece from './Piece'
+
+import {
+  PIECE_VISUALS,
+  KEYS
+} from '../constants'
 
 export default function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
+  let symbol = null
   let ariaLabel = `${squareId} is empty`
   let classNames = ['chess-board-square']
 
@@ -11,6 +16,11 @@ export default function Square({ squareId, piece, isDark, isActive, targetedBy, 
 
   if (piece) {
     ariaLabel = `${squareId} contains a ${piece.colorName} ${piece.typeName}`
+    symbol = PIECE_VISUALS[piece.typeName][piece.colorName]
+
+    if (piece.colorName === KEYS.BLACK) {
+      classNames.push('chess-board-square--black-piece')
+    }
   }
 
   if (isActive) {
@@ -35,11 +45,7 @@ export default function Square({ squareId, piece, isDark, isActive, targetedBy, 
       disabled={!onClick}
       className={classNames.join(' ')}
       onClick={() => onClick(squareId)}>
-      {piece && (
-        <Piece
-          typeName={piece.typeName}
-          colorName={piece.colorName}/>
-      )}
+      {symbol}
     </button>
   )
 }

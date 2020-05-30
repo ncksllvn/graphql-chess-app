@@ -41,6 +41,9 @@ html {
 .chess-board-square {
   margin: 0;
   border: none;
+  color: white;
+  font-size: calc(var(--square-width) * 0.6);
+  text-shadow: slategray 0px 1px 1px;
   background-color: var(--light-accent-color)
 }
 
@@ -63,13 +66,7 @@ html {
   z-index: 2;
 }
 
-.chess-board-piece {
-  font-size: calc(var(--square-width) * 0.6);
-  color: white;
-  text-shadow: slategray 0px 1px 1px;
-}
-
-.chess-board-piece--black {
+.chess-board-square--black-piece {
   color: black;
 }
 
