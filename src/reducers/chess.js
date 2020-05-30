@@ -15,21 +15,18 @@ function generateMovesBySquare(chess) {
 }
 
 function generateSquares(chess) {
-  return chess.board
-    .reduce((list, { rank, squares }) => {
-        const  squareData = squares
-          .map(({ file, piece }, index) => {
-            const dark = rank % 2 ? !(index % 2) : index % 2
-            return {
-              id: `${file}${rank}`,
-              rank,
-              file,
-              piece,
-              dark
-            }
+  return chess.board.reduce(
+      (list, row) => {
+        const mappedRow = row.squares.map(
+          (square, index) => ({
+            piece: square.piece,
+            id: `${square.file}${row.rank}`,
+            isDark: row.rank % 2 ? !(index % 2) : index % 2
           })
-        return list.concat(squareData)
-      }, [])
+        )
+        return [ ...list, ...mappedRow ]
+      },
+    [])
 }
 
 function mapChessDataToState(chess) {
