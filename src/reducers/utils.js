@@ -59,7 +59,7 @@ export function mapChessDataToState(chess) {
 
 export function generateSelectedSquare(state, selectedSquareId) {
   const canceled = (
-    selectedSquareId === state.ui.selectedSquareId
+    selectedSquareId === state.ui.selectedSquare?.id
   )
 
   if (canceled) {
