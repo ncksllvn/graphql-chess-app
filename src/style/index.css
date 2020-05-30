@@ -1,15 +1,16 @@
 :root {
   --app-width: 350px;
-  --board-border-width: 2px;
-  --square-width: calc((var(--app-width) - var(--board-border-width) * 2) / 8);
+  --square-width: calc((var(--app-width) - ( 2 * var(--board-border-width))) / 8);
   --spinner-width: calc(var(--app-width) / 20);
   --background-color: darkseagreen; /* mediumaquamarine */
+  --container-background: sienna;
   --light-accent-color: burlywood;
   --dark-accent-color: peru;
-  --highlight-color: limegreen;
+  --highlight-color: aquamarine;
   --highlight-color-alt: orangered;
-  --border-color: blanchedalmond;
-  --board-border: var(--board-border-width) groove var(--border-color);
+  --border-color: saddlebrown;
+  --board-border-width: 4px;
+  --board-border: var(--board-border-width) solid var(--border-color);
 }
 
 html {
@@ -18,9 +19,12 @@ html {
 }
 
 .chess-container {
-  margin: 0 auto;
+  background-color: var(--container-background);
+  border: var(--board-border);
   width: var(--app-width);
+  margin: 0 auto;
   position: relative;
+  padding: 15px;
 }
 
 .chess-board {
@@ -36,7 +40,7 @@ html {
 
 .chess-board-square {
   margin: 0;
-  border: var(--board-border);
+  border: none;
   background-color: var(--light-accent-color)
 }
 
@@ -49,7 +53,7 @@ html {
 }
 
 .chess-board-square--active, .chess-board-square:active, .chess-board-square:focus {
-  border-width: 3px;
+  border-width: 4px;
   border-style: inset;
 }
 
@@ -70,17 +74,14 @@ html {
 }
 
 .console {
-  margin: 5px 0;
-  border: var(--board-border);
   background-color: var(--light-accent-color);
+  border: var(--board-border);
+  margin: 15px 0 0;
+  padding: 5px;
 }
 
 .console-output {
   display: block;
-  margin: 5px;
   padding: 5px 10px;
-  border: var(--board-border);
-  border-style: inset;
-  background-color: var(--border-color);
   font-family: monospace;
 }
