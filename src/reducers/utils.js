@@ -1,9 +1,26 @@
-import {
-  CHESS_AND_CONSTANTS,
-  MOVE
-} from '../constants'
+export function generatePiecesBySymbol(pieceConstants) {
+  return Object.entries(pieceConstants).reduce(
+    (result, [typeName, symbol]) => {
+      return {
+        [symbol]: typeName,
+        ...result
+      }
+    }
+  , {})
+}
 
-function generateMovesBySquare(chess) {
+export function generateColorsBySymbol(colorConstants) {
+  return Object.entries(colorConstants).reduce(
+    (result, [colorName, symbol]) => {
+      return {
+        [symbol]: colorName,
+        ...result
+      }
+    }
+  , {})
+}
+
+export function generateMovesBySquare(chess) {
   return chess.moves
     .reduce((result, nextMove) => {
       const movesForSquare = result[nextMove.from] || []
@@ -14,7 +31,7 @@ function generateMovesBySquare(chess) {
     }, {})
 }
 
-function generateSquares(chess) {
+export function generateSquares(chess) {
   return chess.board.reduce(
       (list, row) => {
         const mappedRow = row.squares.map(
@@ -29,7 +46,7 @@ function generateSquares(chess) {
     [])
 }
 
-function mapChessDataToState(chess) {
+export function mapChessDataToState(chess) {
   const movesBySquare = generateMovesBySquare(chess)
   const squares = generateSquares(chess)
 
@@ -37,16 +54,5 @@ function mapChessDataToState(chess) {
     ...chess,
     squares,
     movesBySquare
-  }
-}
-
-export default function chess(state = null, action) {
-  switch (action.type) {
-    case CHESS_AND_CONSTANTS.RECEIVE:
-    case MOVE.RECEIVE:
-      return mapChessDataToState(action.data.chess)
-
-    default:
-      return state
   }
 }
