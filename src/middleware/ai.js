@@ -22,17 +22,15 @@ export default store => next => async action => {
         fen,
         turn,
         moves,
-        analysis: {
-          bestMove
-        }
+        analysis
       }
     } = store.getState()
 
     if (turn === AI_COLOR) {
-      if (!bestMove) {
+      if (!analysis?.bestMove) {
         console.log('@todo no best move! playing a random...')
       }
-      const { from, to } = bestMove ? bestMove : moves[0] // todo check for promotion flag
+      const { from, to } = analysis ? analysis.bestMove : moves[0] // todo check for promotion flag
       store.dispatch(pieceSelected(from))
       await new Promise(resolve => setTimeout(resolve, aiMoveDelay))
       store.dispatch(moveInitiated(fen, { from, to }))
