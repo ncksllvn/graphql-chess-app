@@ -9,7 +9,8 @@ import {
   generatePiecesBySymbol,
   mapChessDataToState,
   generateSelectedSquare,
-  updateLog
+  updateLog,
+  startGameLog
 } from './utils'
 
 const initialState = {
@@ -54,7 +55,7 @@ export default function reducer(state = initialState, action) {
           colorConstants,
           flagConstants
         },
-        log: ['Game ready']
+        log: startGameLog()
       }
     }
 

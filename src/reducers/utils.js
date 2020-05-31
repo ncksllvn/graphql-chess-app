@@ -1,3 +1,5 @@
+import formatDate from 'date-fns/format'
+
 export function generatePiecesBySymbol(pieceConstants) {
   return Object.entries(pieceConstants).reduce(
     (result, [typeName, symbol]) => {
@@ -121,8 +123,17 @@ export function updateLog(state, move) {
     message = `${message} to capture ${pieceTitle(to.piece)}`
   }
 
+  const timestamp = formatDate(new Date, 'HH:mm:ss')
+
   return [
     ...state.log,
-    message
+    `[${timestamp}] ${message}`
+  ]
+}
+
+export function startGameLog() {
+  const timestamp = formatDate(new Date, 'HH:mm:ss')
+  return [
+    `[${timestamp}] Game ready`
   ]
 }
