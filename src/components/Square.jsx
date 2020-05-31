@@ -24,20 +24,20 @@ export default function Square({ squareId, piece, isDark, isActive, targetedBy, 
     if (piece.color === COLORS.BLACK) {
       classNames.push('chess-board-square--black-piece')
     }
-  }
 
-  if (isActive) {
-    classNames.push('chess-board-square--active')
-    ariaLabel =
-      `${squareId} contains a ${piece.colorName} ${piece.typeName} selected for move.${' '
-      } Use the tab keys to select a square to initiate move.${' '
-      } Press again to cancel selection.`
+    if (isActive) {
+      classNames.push('chess-board-square--active')
+      ariaLabel =
+        `${squareId} contains a ${colorName} ${typeName} selected for move.${' '
+        } Use the tab keys to select a square to initiate move.${' '
+        } Press again to cancel selection.`
+    }
   }
 
   if (targetedBy) {
     classNames.push('chess-board-square--targeted')
-    ariaLabel = `Move ${targetedBy.piece.typeName} on ${targetedBy.id} ${
-      piece ? `to capture ${piece.typeName} on ${squareId}` : `to ${squareId}`
+    ariaLabel = `Move ${piecesBySymbol.get(targetedBy.piece.type)} on ${targetedBy.id} ${
+      piece ? `to capture ${piecesBySymbol.get(piece.type)} on ${squareId}` : `to ${squareId}`
     }`
   }
 

@@ -1,6 +1,3 @@
-import { piecesBySymbol } from './constants/pieces'
-import { colorsBySymbol } from './constants/colors'
-
 export function getSelectedSquare(state) {
   const { selectedSquareId } = state.ui
 
@@ -13,9 +10,6 @@ export function getSelectedSquare(state) {
       square.id === selectedSquareId
     )
 
-  const typeName = piecesBySymbol.get(square.piece.type)
-  const colorName = colorsBySymbol.get(square.piece.color)
-
   const moves = state.chess.movesBySquare[square.id]
   const targets = moves?.map(
       (move) => move.to
@@ -23,11 +17,6 @@ export function getSelectedSquare(state) {
 
   return {
     ...square,
-    targets,
-    piece: {
-      ...square.piece,
-      typeName,
-      colorName
-    }
+    targets
   }
 }
