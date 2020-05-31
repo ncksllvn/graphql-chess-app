@@ -8,7 +8,7 @@
 - [x] Show placeholder while board is loading
 - [x] Account for no best move
 - [x] Fix font size appearance on small screens
-- [ ] Ensure AI can promote pawns
+- [x] Ensure AI can promote pawns
 - [x] Use hook for scrolling log to bottom on change
 - [ ] Add flags into log
 
