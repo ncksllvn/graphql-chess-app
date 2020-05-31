@@ -27,8 +27,7 @@ export default function Board() {
 
   const moveInitiated = useCallback(
     (squareId) => {
-      let { from, to, promotion } =
-        chess.moves
+      let { from, to, promotion } = chess.moves
         .filter(
           (move) => move.from === ui.selectedSquare.id
         ).find(
