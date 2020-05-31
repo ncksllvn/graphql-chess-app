@@ -34,6 +34,13 @@ html {
   border: var(--board-border);
 }
 
+.chess-board--loading {
+  --width: calc(8 * var(--square-width));
+  background-color: var(--light-accent-color);
+  height: var(--width);
+  width: var(--width);
+}
+
 .chess-board--black-turn {
   --highlight-color: var(--highlight-color-alt);
 }

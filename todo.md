@@ -9,7 +9,7 @@
 - [ ] Consider sound effects
 - [ ] Add flags into log
 - [ ] Ensure AI can promote pawns
-- [ ] Show placeholder while board is loading
+- [x] Show placeholder while board is loading
 - [ ] Account for no best move
 - [ ] ~~Map types/colors in server~~
 - [ ] Fix font size appearance on small screens
