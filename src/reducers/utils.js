@@ -99,7 +99,12 @@ export function generateSelectedSquare(state, selectedSquareId) {
   }
 }
 
-export function updateLog(state, move) {
+export function timestamped(message) {
+  const timestamp = formatDate(new Date(), 'HH:mm:ss')
+  return `[${timestamp}] ${message}`
+}
+
+export function addMoveToLog(state, move) {
   const from = state.chess.squares.find(
       (square) => square.id === move.from
     )
@@ -123,17 +128,8 @@ export function updateLog(state, move) {
     message = `${message} to capture ${pieceTitle(to.piece)}`
   }
 
-  const timestamp = formatDate(new Date(), 'HH:mm:ss')
-
   return [
     ...state.log,
-    `[${timestamp}] ${message}`
-  ]
-}
-
-export function startGameLog() {
-  const timestamp = formatDate(new Date(), 'HH:mm:ss')
-  return [
-    `[${timestamp}] Game ready`
+    timestamped(message)
   ]
 }

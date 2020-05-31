@@ -9,8 +9,8 @@ import {
   generatePiecesBySymbol,
   mapChessDataToState,
   generateSelectedSquare,
-  updateLog,
-  startGameLog
+  addMoveToLog,
+  timestamped
 } from './utils'
 
 const initialState = {
@@ -22,16 +22,24 @@ const initialState = {
   ui: {
     selectedSquare: null
   },
-  log: null
+  log: [
+    timestamped('game starting...')
+  ]
 }
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case CHESS_AND_CONSTANTS.REQUEST:
-    case MOVE.REQUEST: {
+    case CHESS_AND_CONSTANTS.REQUEST: {
       return {
         ...state,
         appStatus: { loading: true }
+      }
+    }
+
+    case MOVE.REQUEST: {
+      return {
+        ...state,
+        log: addMoveToLog(state, action.data.variables.move)
       }
     }
 
@@ -55,7 +63,10 @@ export default function reducer(state = initialState, action) {
           colorConstants,
           flagConstants
         },
-        log: startGameLog()
+        log: [
+          ...state.log,
+          timestamped('game ready')
+        ]
       }
     }
 
@@ -71,8 +82,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         appStatus: { loading: false },
         ui: { selectedSquare: null },
-        chess: mapChessDataToState(action.data.chess),
-        log: updateLog(state, action.variables.move)
+        chess: mapChessDataToState(action.data.chess)
       }
     }
 
