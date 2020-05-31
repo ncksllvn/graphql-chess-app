@@ -15,28 +15,28 @@ export default function Square({ squareId, piece, isDark, isActive, targetedBy, 
   }
 
   if (piece) {
-    const colorName = colorsBySymbol.get(piece.color)
-    const typeName = piecesBySymbol.get(piece.type)
-
-    ariaLabel = `${squareId} contains a ${colorName} ${typeName}`
     symbol = PIECE_VISUALS[piece.type][piece.color]
+    ariaLabel =
+      `${squareId} contains a ${colorsBySymbol.get(piece.color)
+      } ${piecesBySymbol.get(piece.type)}`
 
     if (piece.color === COLORS.BLACK) {
       classNames.push('chess-board-square--black-piece')
     }
+  }
 
-    if (isActive) {
-      classNames.push('chess-board-square--active')
-      ariaLabel =
-        `${squareId} contains a ${colorName} ${typeName} selected for move.${' '
-        } Use the tab keys to select a square to initiate move.${' '
-        } Press again to cancel selection.`
-    }
+  if (isActive) {
+    classNames.push('chess-board-square--active')
+    ariaLabel =
+      `${squareId} contains a ${colorsBySymbol.get(piece.color)} ${piecesBySymbol.get(piece.type)
+      } selected for move. Use the tab keys to select a square to initiate move.${' '
+      } Press again to cancel selection.`
   }
 
   if (targetedBy) {
     classNames.push('chess-board-square--targeted')
-    ariaLabel = `Move ${piecesBySymbol.get(targetedBy.piece.type)} on ${targetedBy.id} ${
+    ariaLabel =
+      `Move ${piecesBySymbol.get(targetedBy.piece.type)} on ${targetedBy.id} ${
       piece ? `to capture ${piecesBySymbol.get(piece.type)} on ${squareId}` : `to ${squareId}`
     }`
   }
