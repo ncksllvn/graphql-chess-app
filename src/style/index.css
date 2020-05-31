@@ -51,7 +51,8 @@ html {
   color: white;
   font-size: 2em;
   text-shadow: slategray 0px 1px 1px;
-  background-color: var(--light-accent-color)
+  background-color: var(--light-accent-color);
+  padding: 0;
 }
 
 .chess-board-square--dark {
