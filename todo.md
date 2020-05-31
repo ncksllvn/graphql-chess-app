@@ -1,7 +1,7 @@
 # Todo
 - [x] Spruce up App.js
 - [x] Add middleware to power the AI
-- [ ] Add a log into the UI to record game history and for controls (undo, restart)
+- [x] Add a log into the UI to record game history and for controls (undo, restart)
 - [x] Add a loading indicator
 - [ ] Capture the FEN string in the URL
 - [x] Add support for browser zoom (currently using view units)
@@ -9,8 +9,8 @@
 - [ ] Consider sound effects
 - [ ] Add flags into log
 - [ ] Ensure AI can promote pawns
-- [ ] Show placeholder while board is loading 
-- [ ] Account for no best move 
-- [ ] Map types/colors in server 
-- [ ] Fix font size appearance on small screens 
-- [ ] Use hook for scrolling log to bottom on change 
+- [ ] Show placeholder while board is loading
+- [ ] Account for no best move
+- [ ] ~~Map types/colors in server~~
+- [ ] Fix font size appearance on small screens
+- [ ] Use hook for scrolling log to bottom on change
