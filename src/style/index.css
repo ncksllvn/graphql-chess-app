@@ -74,11 +74,21 @@ html {
   background-color: var(--light-accent-color);
   border: var(--board-border);
   margin: 15px 0 0;
-  padding: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  height: 100px;
 }
 
 .console-output {
   display: block;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
   font-family: monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.console-output-item {
+  list-style: none;
 }

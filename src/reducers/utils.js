@@ -96,3 +96,33 @@ export function generateSelectedSquare(state, selectedSquareId) {
     selectedSquare
   }
 }
+
+export function updateLog(state, move) {
+  const from = state.chess.squares.find(
+      (square) => square.id === move.from
+    )
+
+  const to = state.chess.squares.find(
+      (square) => square.id === move.to
+    )
+
+  const {
+    piecesBySymbol,
+    colorsBySymbol
+  } = state.constants
+
+  const pieceTitle = (piece) => (
+    `${colorsBySymbol[piece.color]} ${piecesBySymbol[piece.type]}`.toLowerCase()
+  )
+
+  let message = `${pieceTitle(from.piece)} moves from ${from.id} to ${to.id}`
+
+  if (to.piece) {
+    message = `${message} to capture ${pieceTitle(to.piece)}`
+  }
+
+  return [
+    ...state.log,
+    message
+  ]
+}

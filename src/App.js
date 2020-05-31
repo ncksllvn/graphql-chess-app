@@ -5,7 +5,7 @@ import { startApp } from './actions'
 
 import Board from './components/Board'
 import Spinner from './components/Spinner'
-import Console from './components/Console'
+import Log from './components/Log'
 
 export default function App() {
   const dispatch = useDispatch()
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <>
       <Board/>
-      <Console/>
+      <Log/>
       <Spinner/>
     </>
   );

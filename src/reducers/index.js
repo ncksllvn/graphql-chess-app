@@ -8,7 +8,8 @@ import {
   generateColorsBySymbol,
   generatePiecesBySymbol,
   mapChessDataToState,
-  generateSelectedSquare
+  generateSelectedSquare,
+  updateLog
 } from './utils'
 
 const initialState = {
@@ -19,7 +20,8 @@ const initialState = {
   constants: null,
   ui: {
     selectedSquare: null
-  }
+  },
+  log: null
 }
 
 export default function reducer(state = initialState, action) {
@@ -51,7 +53,8 @@ export default function reducer(state = initialState, action) {
           pieceConstants,
           colorConstants,
           flagConstants
-        }
+        },
+        log: ['Game ready']
       }
     }
 
@@ -67,7 +70,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         appStatus: { loading: false },
         ui: { selectedSquare: null },
-        chess: mapChessDataToState(action.data.chess)
+        chess: mapChessDataToState(action.data.chess),
+        log: updateLog(state, action.variables.move)
       }
     }
 
