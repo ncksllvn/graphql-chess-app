@@ -82,10 +82,9 @@ html {
   border: var(--board-border);
   margin: 15px 0 0;
   padding: 10px;
-  display: flex;
-  flex-direction: column-reverse;
   overflow-y: scroll;
-  height: 100px;
+  height: 50px;
+  max-height: 50px;
 }
 
 .console-output {
