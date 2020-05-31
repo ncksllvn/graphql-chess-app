@@ -6,3 +6,6 @@
 - [ ] Capture the FEN string in the URL
 - [x] Add support for browser zoom (currently using view units)
 - [ ] Tell the user when the game is over
+- [ ] Consider sound effects
+- [ ] Add flags into log
+- [ ] Ensure AI can promote pawns
