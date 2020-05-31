@@ -1,6 +1,6 @@
 import {
   CALL_API
-} from '../constants'
+} from '../constants/actions'
 
 const serverUrl = process.env.REACT_APP_API
 const method = 'POST'
@@ -36,7 +36,7 @@ export default () => next => async action => {
       const { data, errors } = json
 
       if (data) {
-        next({ type: receive, data })
+        next({ type: receive, data, variables })
       }
 
       if (errors) {

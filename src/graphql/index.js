@@ -41,50 +41,11 @@ const CHESS_FRAGMENT = `
   }
 `
 
-export const GET_CONSTANTS_AND_CHESS = `
+export const GET_CHESS = `
   ${CHESS_FRAGMENT}
-
-  fragment ColorConstants on Constants {
-    BLACK
-    WHITE
-  }
-
-  fragment PieceConstants on Constants {
-    BISHOP
-    KING
-    KNIGHT
-    PAWN
-    QUEEN
-    ROOK
-  }
-
-  fragment FlagConstants on Constants {
-    FLAGS {
-      NORMAL
-      CAPTURE
-      BIG_PAWN
-      EP_CAPTURE
-      PROMOTION
-      KSIDE_CASTLE
-      QSIDE_CASTLE
-    }
-  }
-
   {
     chess {
       ... ChessAttributes
-    }
-
-    colorConstants: constants {
-      ... ColorConstants
-    }
-
-    pieceConstants: constants {
-      ... PieceConstants
-    }
-
-    flagConstants: constants {
-      ... FlagConstants
     }
   }
 `

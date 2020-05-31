@@ -1,9 +1,9 @@
 import React from 'react'
 
-import {
-  PIECE_VISUALS,
-  KEYS
-} from '../constants'
+import PIECE_VISUALS from '../constants/visuals'
+
+import { piecesBySymbol } from '../constants/pieces'
+import COLORS, { colorsBySymbol } from '../constants/colors'
 
 export default function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
   let symbol = null
@@ -15,10 +15,13 @@ export default function Square({ squareId, piece, isDark, isActive, targetedBy, 
   }
 
   if (piece) {
-    ariaLabel = `${squareId} contains a ${piece.colorName} ${piece.typeName}`
-    symbol = PIECE_VISUALS[piece.typeName][piece.colorName]
+    const colorName = colorsBySymbol.get(piece.color)
+    const typeName = piecesBySymbol.get(piece.type)
 
-    if (piece.colorName === KEYS.BLACK) {
+    ariaLabel = `${squareId} contains a ${colorName} ${typeName}`
+    symbol = PIECE_VISUALS[piece.type][piece.color]
+
+    if (piece.color === COLORS.BLACK) {
       classNames.push('chess-board-square--black-piece')
     }
   }

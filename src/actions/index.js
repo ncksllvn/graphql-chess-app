@@ -1,23 +1,23 @@
 import {
   CALL_API,
-  CHESS_AND_CONSTANTS,
+  APP_STARTED,
   PIECE_SELECTED,
-  MOVE
-} from '../constants'
+  MOVE_INITIATED
+} from '../constants/actions'
 
 import {
-  GET_CONSTANTS_AND_CHESS,
+  GET_CHESS,
   MAKE_MOVE
 } from '../graphql'
 
 export function startApp() {
   return {
     [CALL_API]: {
-      query: GET_CONSTANTS_AND_CHESS,
+      query: GET_CHESS,
       types: [
-        CHESS_AND_CONSTANTS.REQUEST,
-        CHESS_AND_CONSTANTS.RECEIVE,
-        CHESS_AND_CONSTANTS.FAILURE
+        APP_STARTED.REQUEST,
+        APP_STARTED.RECEIVE,
+        APP_STARTED.FAILURE
       ]
     }
   }
@@ -36,9 +36,9 @@ export function moveInitiated(fen, move) {
         move
       },
       types: [
-        MOVE.REQUEST,
-        MOVE.RECEIVE,
-        MOVE.FAILURE
+        MOVE_INITIATED.REQUEST,
+        MOVE_INITIATED.RECEIVE,
+        MOVE_INITIATED.FAILURE
       ]
     }
   }

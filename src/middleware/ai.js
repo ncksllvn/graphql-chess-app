@@ -1,7 +1,10 @@
 import {
-  MOVE,
+  MOVE_INITIATED
+} from '../constants/actions'
+
+import {
   AI_COLOR
-} from '../constants'
+} from '../constants/colors'
 
 import {
   pieceSelected,
@@ -13,11 +16,8 @@ const aiMoveDelay = 1000
 export default store => next => async action => {
   next(action)
 
-  if (action.type === MOVE.RECEIVE) {
+  if (action.type === MOVE_INITIATED.RECEIVE) {
     const {
-      constants: {
-        colorConstants
-      },
       chess: {
         fen,
         turn,
@@ -27,7 +27,7 @@ export default store => next => async action => {
       }
     } = store.getState()
 
-    if (turn === colorConstants[AI_COLOR]) {
+    if (turn === AI_COLOR) {
       store.dispatch(pieceSelected(from))
       await new Promise(resolve => setTimeout(resolve, aiMoveDelay))
       store.dispatch(moveInitiated(fen, { from, to }))

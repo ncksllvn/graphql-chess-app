@@ -1,7 +1,12 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { KEYS } from '../constants'
+import {
+  getSelectedSquare
+} from '../selectors'
+
+import PIECES from '../constants/pieces'
+import COLORS from '../constants/colors'
 
 import {
   pieceSelected as pieceSelectedAction,
@@ -14,8 +19,7 @@ export default function Board() {
   const dispatch = useDispatch()
 
   const chess = useSelector(state => state.chess)
-  const constants = useSelector(state => state.constants)
-  const ui = useSelector(state => state.ui)
+  const selectedSquare = useSelector(getSelectedSquare)
 
   const pieceSelected = useCallback(
     (squareId) =>
@@ -29,19 +33,19 @@ export default function Board() {
     (squareId) => {
       let { from, to, promotion } = chess.moves
         .filter(
-          (move) => move.from === ui.selectedSquare.id
+          (move) => move.from === selectedSquare.id
         ).find(
           (move) => move.to === squareId
         )
 
       if (promotion) {
-        promotion = constants.pieceConstants[KEYS.QUEEN]
+        promotion = PIECES.QUEEN
       }
 
       dispatch(
         moveInitiatedAction(chess.fen, { from, to, promotion })
       )
-    }, [dispatch, chess, constants, ui]
+    }, [dispatch, chess, selectedSquare]
   )
 
   if (!chess) {
@@ -50,7 +54,7 @@ export default function Board() {
 
   const classNames= ['chess-board']
 
-  if (constants.colorsBySymbol[chess.turn] === KEYS.BLACK) {
+  if (chess.turn === COLORS.BLACK) {
     classNames.push('chess-board--black-turn')
   }
 
@@ -58,31 +62,25 @@ export default function Board() {
     <div className={classNames.join(' ')}>
       {chess.squares.map(({ id: squareId, piece, isDark }) => {
         const isActive = (
-          squareId === ui.selectedSquare?.id
+          squareId === selectedSquare?.id
         )
 
         const isTargeted = (
-          ui.selectedSquare?.targets?.includes(squareId)
+          selectedSquare?.targets?.includes(squareId)
         )
 
         const targetedBy = (
-          isTargeted ? ui.selectedSquare : null
+          isTargeted ? selectedSquare : null
         )
 
         const onClick = isTargeted ? moveInitiated : (
           piece ? pieceSelected : null
         )
 
-        const pieceExpanded = piece && {
-          typeName: constants.piecesBySymbol[piece.type],
-          colorName: constants.colorsBySymbol[piece.color],
-          ...piece
-        }
-
         return (
           <Square
             key={squareId}
-            piece={pieceExpanded}
+            piece={piece}
             squareId={squareId}
             isDark={isDark}
             isActive={isActive}

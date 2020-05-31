@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux'
 import { startApp } from './actions'
 
 import Board from './components/Board'
-import Spinner from './components/Spinner'
 import Log from './components/Log'
 
 export default function App() {
@@ -18,7 +17,6 @@ export default function App() {
     <>
       <Board/>
       <Log/>
-      <Spinner/>
     </>
   );
 }
