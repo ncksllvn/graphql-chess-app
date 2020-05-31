@@ -123,7 +123,7 @@ export function updateLog(state, move) {
     message = `${message} to capture ${pieceTitle(to.piece)}`
   }
 
-  const timestamp = formatDate(new Date, 'HH:mm:ss')
+  const timestamp = formatDate(new Date(), 'HH:mm:ss')
 
   return [
     ...state.log,
@@ -132,7 +132,7 @@ export function updateLog(state, move) {
 }
 
 export function startGameLog() {
-  const timestamp = formatDate(new Date, 'HH:mm:ss')
+  const timestamp = formatDate(new Date(), 'HH:mm:ss')
   return [
     `[${timestamp}] Game ready`
   ]
