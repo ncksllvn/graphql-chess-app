@@ -20,7 +20,8 @@ export default store => next => async action => {
         type: EVENT_LOGGED,
         data: timestampMessage('Initializing game...')
       })
-      break
+
+      return next(action)
     }
 
     case APP_STARTED.RECEIVE: {
@@ -28,7 +29,7 @@ export default store => next => async action => {
         type: EVENT_LOGGED,
         data: timestampMessage('Game ready')
       })
-      break
+      return next(action)
     }
 
     case APP_STARTED.FAILURE: {
@@ -36,7 +37,7 @@ export default store => next => async action => {
         type: EVENT_LOGGED,
         data: timestampMessage('Failed to start game')
       })
-      break
+      return next(action)
     }
 
     case MOVE_INITIATED.RECEIVE: {
@@ -67,7 +68,24 @@ export default store => next => async action => {
         type: EVENT_LOGGED,
         data: timestampMessage(message)
       })
-      break
+
+      next(action)
+
+      const nextState = store.getState()
+
+      if (nextState.chess.inCheckmate) {
+        store.dispatch({
+          type: EVENT_LOGGED,
+          data: timestampMessage(`${colorsBySymbol.get(nextState.chess.turn)} is in checkmate`)
+        })
+      } else if (nextState.chess.inCheck) {
+        store.dispatch({
+          type: EVENT_LOGGED,
+          data: timestampMessage(`${colorsBySymbol.get(nextState.chess.turn)} is in check`)
+        })
+      }
+
+      return
     }
 
     default:
