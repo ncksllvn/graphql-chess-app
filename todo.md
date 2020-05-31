@@ -3,14 +3,15 @@
 - [x] Add middleware to power the AI
 - [x] Add a log into the UI to record game history and for controls (undo, restart)
 - [x] Add a loading indicator
-- [ ] Capture the FEN string in the URL
 - [x] Add support for browser zoom (currently using view units)
-- [ ] Tell the user when the game is over
-- [ ] Consider sound effects
-- [ ] Add flags into log
-- [ ] Ensure AI can promote pawns
+- [x] Tell the user when the game is over
 - [x] Show placeholder while board is loading
-- [ ] Account for no best move
-- [ ] ~~Map types/colors in server~~
-- [ ] Fix font size appearance on small screens
+- [x] Account for no best move
+- [x] Fix font size appearance on small screens
+- [ ] Ensure AI can promote pawns
 - [ ] Use hook for scrolling log to bottom on change
+- [ ] Add flags into log
+
+V2:
+- [ ] Capture the FEN string in the URL
+- [ ] Consider sound effects
