@@ -9,7 +9,7 @@
 - [x] Account for no best move
 - [x] Fix font size appearance on small screens
 - [ ] Ensure AI can promote pawns
-- [ ] Use hook for scrolling log to bottom on change
+- [x] Use hook for scrolling log to bottom on change
 - [ ] Add flags into log
 
 V2:
