@@ -9,7 +9,7 @@ export default function Log(){
   const gameLog = useSelector(selectGameLog)
   const ref = useRef(null)
 
-  useScrollToBottom(ref)
+  useScrollToBottom(ref, gameLog)
 
   return (
     <div ref={ref} className="console" role="log">
