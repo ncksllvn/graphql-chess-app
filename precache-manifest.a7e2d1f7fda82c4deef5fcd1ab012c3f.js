@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e89fd58613ae1e217b9daf9481d5f1be",
+    "revision": "0193a6309a84413478db790508bee42a",
     "url": "/graphql-chess-app/index.html"
   },
   {
-    "revision": "5aefdb37018b33064843",
-    "url": "/graphql-chess-app/static/css/main.bfcccefe.chunk.css"
+    "revision": "9520dffc59567f4ddbfc",
+    "url": "/graphql-chess-app/static/css/main.b0ba6fea.chunk.css"
   },
   {
     "revision": "ba1e909ebfbcf8199e94",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/graphql-chess-app/static/js/2.d031bf30.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5aefdb37018b33064843",
-    "url": "/graphql-chess-app/static/js/main.3a202593.chunk.js"
+    "revision": "9520dffc59567f4ddbfc",
+    "url": "/graphql-chess-app/static/js/main.52476810.chunk.js"
   },
   {
     "revision": "7a319d294ac011601b9b",
