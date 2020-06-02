@@ -4,27 +4,27 @@ import PIECES from './pieces'
 const visuals = {
   [PIECES.KING]: {
     [COLORS.BLACK]: '\u265A',
-    [COLORS.WHITE]: '\u2654'
+    [COLORS.WHITE]: '\u265A'
   },
   [PIECES.QUEEN]: {
     [COLORS.BLACK]: '\u265B',
-    [COLORS.WHITE]: '\u2655'
+    [COLORS.WHITE]: '\u265B'
   },
   [PIECES.ROOK]: {
     [COLORS.BLACK]: '\u265C',
-    [COLORS.WHITE]: '\u2656'
+    [COLORS.WHITE]: '\u265C'
   },
   [PIECES.BISHOP]: {
     [COLORS.BLACK]: '\u265D',
-    [COLORS.WHITE]: '\u2657'
+    [COLORS.WHITE]: '\u265D'
   },
   [PIECES.KNIGHT]: {
     [COLORS.BLACK]: '\u265E',
-    [COLORS.WHITE]: '\u2658'
+    [COLORS.WHITE]: '\u265E'
   },
   [PIECES.PAWN]: {
     [COLORS.BLACK]: '\u265F',
-    [COLORS.WHITE]: '\u2659'
+    [COLORS.WHITE]: '\u265F'
   }
 }
 

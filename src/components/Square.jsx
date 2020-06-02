@@ -8,10 +8,14 @@ import COLORS, { colorsBySymbol } from '../constants/colors'
 export default function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
   let symbol = null
   let ariaLabel = `${squareId} is empty`
-  let classNames = ['chess-board-square']
+  let classNames = ['chess-board-square', `chess-board-square--${squareId}`]
 
   if (isDark) {
     classNames.push('chess-board-square--dark')
+  }
+
+  if (onClick) {
+    classNames.push('chess-board-square--clickable')
   }
 
   if (piece) {
@@ -45,6 +49,7 @@ export default function Square({ squareId, piece, isDark, isActive, targetedBy, 
     <button
       type="button"
       aria-label={ariaLabel}
+      aria-pressed={isActive}
       disabled={!onClick}
       className={classNames.join(' ')}
       onClick={() => onClick(squareId)}>
