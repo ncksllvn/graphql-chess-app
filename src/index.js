@@ -12,11 +12,10 @@ import './style/spinner.css';
 import App from './App';
 import reducers from './reducers'
 import api from './middleware/api'
-import ai from './middleware/ai'
 import log from './middleware/log'
 import * as serviceWorker from './serviceWorker';
 
-const middleware = [api, ai, log]
+const middleware = [api, log]
 const enhancers = composeWithDevTools(applyMiddleware(...middleware))
 const store = createStore(reducers, enhancers)
 

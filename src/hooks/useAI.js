@@ -1,6 +1,4 @@
-import {
-  MOVE_INITIATED
-} from '../constants/actions'
+import { useEffect } from 'react'
 
 import {
   AI_COLOR
@@ -15,20 +13,15 @@ import {
 
 const aiMoveDelay = 1000
 
-export default store => next => async action => {
-  next(action)
-
-  if (action.type === MOVE_INITIATED.RECEIVE) {
-    const {
-      chess: {
+export default function useAI(dispatch, chess) {
+  return useEffect(() => {
+    async function performAiMove() {
+      const {
         fen,
-        turn,
         moves,
         analysis
-      }
-    } = store.getState()
+      } = chess
 
-    if (turn === AI_COLOR) {
       let move = null
 
       if (!analysis?.bestMove) {
@@ -49,15 +42,18 @@ export default store => next => async action => {
         promotion = PIECES.QUEEN
       }
 
-      store.dispatch(
-        pieceSelected(from)
-      )
+      dispatch(pieceSelected(from))
 
       await new Promise(resolve => setTimeout(resolve, aiMoveDelay))
 
-      store.dispatch(
+      dispatch(
         moveInitiated(fen, { from, to, promotion })
       )
     }
-  }
+
+    if (chess?.turn === AI_COLOR) {
+      performAiMove()
+    }
+
+  }, [dispatch, chess])
 }
