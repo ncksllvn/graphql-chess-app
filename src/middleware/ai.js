@@ -45,6 +45,7 @@ export default store => next => async action => {
       let { from, to, promotion } = move
 
       if (promotion) {
+        // Disable under-promoting
         promotion = PIECES.QUEEN
       }
 
