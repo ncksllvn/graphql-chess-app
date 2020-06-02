@@ -1,17 +1,17 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
+
+import useScrollToBottom from '../hooks/useScrollToBottom'
 
 // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_log_role
 export default function Log(){
   const gameLog = useSelector(state => state.gameLog)
-  const containerEl = useRef(null)
+  const ref = useRef(null)
 
-  useEffect(() => {
-    containerEl.current.scrollTop = containerEl.current.scrollHeight
-  }, [gameLog])
+  useScrollToBottom(ref)
 
   return (
-    <div ref={containerEl} className="console" role="log">
+    <div ref={ref} className="console" role="log">
       <ul className="console-output" aria-live="polite" aria-atomic="false">
         {gameLog?.map((gameEvent, index) =>
           <li key={index} className="console-output-item">
