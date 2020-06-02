@@ -1,11 +1,12 @@
 import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
 
+import { selectGameLog } from '../selectors'
 import useScrollToBottom from '../hooks/useScrollToBottom'
 
 // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_log_role
 export default function Log(){
-  const gameLog = useSelector(state => state.gameLog)
+  const gameLog = useSelector(selectGameLog)
   const ref = useRef(null)
 
   useScrollToBottom(ref)

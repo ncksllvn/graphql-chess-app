@@ -2,17 +2,21 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
-  getSelectedSquare
+  selectActiveSquare,
+  selectChess
 } from '../selectors'
 
-import COLORS, { USER_COLOR } from '../constants/colors'
+import COLORS, {
+  USER_COLOR
+} from '../constants/colors'
+
 import usePieceSelected from '../hooks/usePieceSelected'
 import useMoveInitiated from '../hooks/useMoveInitiated'
 import Square from './Square'
 
 export default function Board() {
-  const chess = useSelector(state => state.chess)
-  const selectedSquare = useSelector(getSelectedSquare)
+  const chess = useSelector(selectChess)
+  const selectedSquare = useSelector(selectActiveSquare)
 
   const dispatch = useDispatch()
   const pieceSelected = usePieceSelected(dispatch)

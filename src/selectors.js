@@ -1,4 +1,12 @@
-export function getSelectedSquare(state) {
+export function selectChess(state) {
+  return state.chess
+}
+
+export function selectGameLog(state) {
+  return state.gameLog
+}
+
+export function selectActiveSquare(state) {
   const { selectedSquareId } = state.ui
 
   if (!selectedSquareId) {
