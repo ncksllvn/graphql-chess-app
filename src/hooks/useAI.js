@@ -11,7 +11,7 @@ import {
   moveInitiated
 } from '../actions'
 
-const aiMoveDelay = 1000
+const AI_MOVE_DELAY = 1000
 
 export default function useAI(dispatch, chess) {
   return useEffect(() => {
@@ -44,7 +44,7 @@ export default function useAI(dispatch, chess) {
 
       dispatch(pieceSelected(from))
 
-      await new Promise(resolve => setTimeout(resolve, aiMoveDelay))
+      await new Promise(resolve => setTimeout(resolve, AI_MOVE_DELAY))
 
       dispatch(
         moveInitiated(fen, { from, to, promotion })
