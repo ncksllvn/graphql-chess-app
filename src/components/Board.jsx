@@ -1,52 +1,22 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
   getSelectedSquare
 } from '../selectors'
 
-import PIECES from '../constants/pieces'
-import COLORS from '../constants/colors'
-
-import {
-  pieceSelected as pieceSelectedAction,
-  moveInitiated as moveInitiatedAction
-} from '../actions'
-
+import COLORS, { USER_COLOR } from '../constants/colors'
+import usePieceSelected from '../hooks/usePieceSelected'
+import useMoveInitiated from '../hooks/useMoveInitiated'
 import Square from './Square'
 
 export default function Board() {
-  const dispatch = useDispatch()
-
   const chess = useSelector(state => state.chess)
   const selectedSquare = useSelector(getSelectedSquare)
 
-  const pieceSelected = useCallback(
-    (squareId) =>
-      dispatch(
-        pieceSelectedAction(squareId)
-      )
-    , [dispatch]
-  )
-
-  const moveInitiated = useCallback(
-    (squareId) => {
-      let { from, to, promotion } = chess.moves
-        .filter(
-          (move) => move.from === selectedSquare.id
-        ).find(
-          (move) => move.to === squareId
-        )
-
-      if (promotion) {
-        promotion = PIECES.QUEEN
-      }
-
-      dispatch(
-        moveInitiatedAction(chess.fen, { from, to, promotion })
-      )
-    }, [dispatch, chess, selectedSquare]
-  )
+  const dispatch = useDispatch()
+  const pieceSelected = usePieceSelected(dispatch)
+  const moveInitiated = useMoveInitiated(dispatch, chess, selectedSquare)
 
   if (!chess) {
     return <div className="chess-board--loading"/>
@@ -65,6 +35,10 @@ export default function Board() {
           squareId === selectedSquare?.id
         )
 
+        const isTurn = (
+          chess.turn == USER_COLOR
+        )
+
         const isTargeted = (
           selectedSquare?.targets?.includes(squareId)
         )
@@ -73,9 +47,11 @@ export default function Board() {
           isTargeted ? selectedSquare : null
         )
 
-        const onClick = isTargeted ? moveInitiated : (
-          piece ? pieceSelected : null
-        )
+        const onClick = isTurn ? (
+          isTargeted ? moveInitiated : (
+              piece ? pieceSelected : null
+            )
+          ) : null
 
         return (
           <Square
