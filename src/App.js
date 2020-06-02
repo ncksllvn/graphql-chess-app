@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux'
 
-import { startApp } from './actions'
-
+import useStartApp from './hooks/useStartApp'
 import Board from './components/Board'
 import Log from './components/Log'
 
 export default function App() {
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(startApp())
-  }, [dispatch])
+  useStartApp(dispatch)
 
   return (
     <>
