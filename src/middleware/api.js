@@ -36,7 +36,7 @@ export default () => next => async action => {
       const { data, errors } = json
 
       if (data) {
-        next({ type: receive, data, variables })
+        next({ type: receive, data })
       }
 
       if (errors) {

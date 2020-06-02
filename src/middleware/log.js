@@ -1,5 +1,3 @@
-import formatDate from 'date-fns/format'
-
 import { piecesBySymbol } from '../constants/pieces'
 import { colorsBySymbol } from '../constants/colors'
 
@@ -9,39 +7,29 @@ import {
   EVENT_LOGGED
 } from '../constants/actions'
 
-const timestampMessage = (message) => (
-  `[${formatDate(new Date(), 'HH:mm:ss')}] ${message}`
-)
-
 export default store => next => async action => {
+  const log = (data) => {
+    store.dispatch({ type: EVENT_LOGGED, data })
+  }
+
   switch (action.type) {
     case APP_STARTED.REQUEST: {
-      store.dispatch({
-        type: EVENT_LOGGED,
-        data: timestampMessage('Initializing game...')
-      })
-
-      return next(action)
+      log('Initializing game...')
+      break
     }
 
     case APP_STARTED.RECEIVE: {
-      store.dispatch({
-        type: EVENT_LOGGED,
-        data: timestampMessage('Game ready')
-      })
-      return next(action)
+      log('Game ready')
+      break
     }
 
     case APP_STARTED.FAILURE: {
-      store.dispatch({
-        type: EVENT_LOGGED,
-        data: timestampMessage('Failed to start game')
-      })
-      return next(action)
+      log('Failed to start game')
+      break
     }
 
-    case MOVE_INITIATED.RECEIVE: {
-      const { move } = action.variables
+    case MOVE_INITIATED.REQUEST: {
+      const { move } = action.data.variables
       const state = store.getState()
 
       const from = state.chess.squares.find(
@@ -64,28 +52,20 @@ export default store => next => async action => {
           } moves from ${from.id} to ${to.id}`
       }
 
-      store.dispatch({
-        type: EVENT_LOGGED,
-        data: timestampMessage(message)
-      })
+      log(message)
+      break
+    }
 
-      next(action)
+    case MOVE_INITIATED.RECEIVE: {
+      const { chess } = action.data
 
-      const nextState = store.getState()
-
-      if (nextState.chess.inCheckmate) {
-        store.dispatch({
-          type: EVENT_LOGGED,
-          data: timestampMessage(`${colorsBySymbol.get(nextState.chess.turn)} is in checkmate`)
-        })
-      } else if (nextState.chess.inCheck) {
-        store.dispatch({
-          type: EVENT_LOGGED,
-          data: timestampMessage(`${colorsBySymbol.get(nextState.chess.turn)} is in check`)
-        })
+      if (chess.inCheckmate) {
+        log(`${colorsBySymbol.get(chess.turn)} is in checkmate`)
+      } else if (chess.inCheck) {
+        log(`${colorsBySymbol.get(chess.turn)} is in check`)
       }
 
-      return
+      break
     }
 
     default:

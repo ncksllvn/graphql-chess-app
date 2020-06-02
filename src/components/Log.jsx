@@ -14,7 +14,9 @@ export default function Log(){
     <div ref={containerEl} className="console" role="log">
       <ul className="console-output" aria-live="polite" aria-atomic="false">
         {gameLog?.map((gameEvent, index) =>
-          <li key={index} className="console-output-item">{gameEvent}</li>
+          <li key={index} className="console-output-item">
+            [<time dateTime={gameEvent.time}>{gameEvent.time}</time>] {gameEvent.message}
+          </li>
         )}
       </ul>
     </div>
