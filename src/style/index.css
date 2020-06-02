@@ -13,10 +13,10 @@
 html {
   height: 100%;
   background-color: var(--background-color);
-  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 .chess-container {
+  font-family: 'Courier New', Courier, monospace;
   background-color: var(--container-background);
   width: var(--app-width);
   margin: 0 auto;
@@ -112,7 +112,6 @@ html {
   margin: 0;
   padding: 0;
   text-transform: lowercase;
-  font-family: monospace;
 }
 
 .console-output-item {
