@@ -1,28 +1,41 @@
 import { useCallback } from 'react'
 
+import { MAKE_MOVE } from '../graphql'
+import { MOVE_INITIATED } from '../constants/actions'
+
 import PIECES from '../constants/pieces'
+import useAPI from './useAPI'
 
-import {
-  moveInitiated
-} from '../actions'
+export default function useMoveInitiated() {
+  const callAPI = useAPI()
 
-export default function useMoveInitiated(dispatch, chess, selectedSquare) {
-  return useCallback(
-    (squareId) => {
-      let { from, to, promotion } = chess.moves
-        .filter(
-          (move) => move.from === selectedSquare.id
-        ).find(
-          (move) => move.to === squareId
+  const moveInitiated = useCallback(
+    (chess, sourceSquareId, destinationSquareId) => {
+      let { from, to, promotion } = chess.moves.find(
+        (move) => (
+          move.from === sourceSquareId &&
+          move.to === destinationSquareId
         )
+      )
 
       if (promotion) {
         promotion = PIECES.QUEEN
       }
 
-      dispatch(
-        moveInitiated(chess.fen, { from, to, promotion })
-      )
-    }, [dispatch, chess, selectedSquare]
-  )
+      callAPI({
+        query: MAKE_MOVE,
+        variables: {
+          fen: chess.fen,
+          move: { from, to, promotion }
+        },
+        types: [
+          MOVE_INITIATED.REQUEST,
+          MOVE_INITIATED.RECEIVE,
+          MOVE_INITIATED.FAILURE
+        ]
+      })
+    }
+  , [callAPI])
+
+  return moveInitiated
 }

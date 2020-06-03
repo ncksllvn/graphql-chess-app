@@ -1,15 +1,12 @@
-import { useCallback } from 'react'
+import { useDispatch } from 'react-redux'
 
 import {
-  pieceSelected
-} from '../actions'
+  PIECE_SELECTED
+} from '../constants/actions'
 
-export default function usePieceSelected(dispatch) {
-  return useCallback(
-    (squareId) =>
-      dispatch(
-        pieceSelected(squareId)
-      )
-    , [dispatch]
+export default function usePieceSelected() {
+  const dispatch = useDispatch()
+  return (squareId) => (
+    dispatch({ type: PIECE_SELECTED, squareId })
   )
 }

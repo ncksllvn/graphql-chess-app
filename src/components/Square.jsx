@@ -1,7 +1,6 @@
 import React from 'react'
 
 import PIECE_VISUALS from '../constants/visuals'
-
 import { piecesBySymbol } from '../constants/pieces'
 import COLORS, { colorsBySymbol } from '../constants/colors'
 

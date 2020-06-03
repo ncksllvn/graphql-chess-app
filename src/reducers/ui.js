@@ -4,7 +4,8 @@ import {
 } from '../constants/actions'
 
 const initialState = {
-  selectedSquareId: null
+  selectedSquareId: null,
+  pendingMove: null
 }
 
 export default function reducer(state = initialState, action) {
@@ -15,12 +16,24 @@ export default function reducer(state = initialState, action) {
       )
 
       return {
+        ...state,
         selectedSquareId: canceled ? null : action.squareId
       }
     }
 
     case MOVE_INITIATED.RECEIVE: {
-      return { selectedSquareId: null }
+      return {
+        ...state,
+        pendingMove: null,
+        selectedSquareId: null
+      }
+    }
+
+    case MOVE_INITIATED.REQUEST: {
+      return {
+        ...state,
+        pendingMove: action.data.variables.move
+      }
     }
 
     default:

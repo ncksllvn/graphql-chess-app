@@ -1,22 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux'
+import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-// import '98.css'
 import './style/index.css';
 import './style/breakpoints.css';
-import './style/spinner.css';
 
 import App from './App';
 import reducers from './reducers'
-import api from './middleware/api'
-import log from './middleware/log'
 import * as serviceWorker from './serviceWorker';
 
-const middleware = [api, log]
-const enhancers = composeWithDevTools(applyMiddleware(...middleware))
+const enhancers = composeWithDevTools()
 const store = createStore(reducers, enhancers)
 
 ReactDOM.render(

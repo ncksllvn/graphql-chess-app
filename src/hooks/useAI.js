@@ -1,59 +1,47 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
+import { useSelector } from 'react-redux'
 
 import {
   AI_COLOR
 } from '../constants/colors'
 
-import PIECES from '../constants/pieces'
+import { selectChess } from '../selectors'
 
-import {
-  pieceSelected,
-  moveInitiated
-} from '../actions'
+import usePieceSelected from './usePieceSelected'
+import useMoveInitiated from './useMoveInitiated'
 
 const AI_MOVE_DELAY = 1000
 
-export default function useAI(dispatch, chess) {
-  return useEffect(() => {
-    async function performAiMove() {
+export default function useAI() {
+  const chess = useSelector(selectChess)
+  const turn = chess?.turn
+  const gameOver = chess?.gameOver
+
+  const pieceSelected = usePieceSelected()
+  const moveInitiated = useMoveInitiated()
+
+  const performMove = useCallback(
+    async () => {
       const {
-        fen,
         moves,
         analysis
       } = chess
 
-      let move = null
+      const move = analysis?.bestMove ?? moves[0]
 
-      if (!analysis?.bestMove) {
-        move = moves[0]
-      } else {
-        // @todo bestMove doesn't include the promotion flag, so we grab
-        // the corresponding move from the moves array
-        const { bestMove } = analysis
-        move = moves.find(
-          move => move.from === bestMove.from && move.to === bestMove.to
-        )
-      }
+      pieceSelected(move.from)
 
-      let { from, to, promotion } = move
-
-      if (promotion) {
-        // Disable under-promoting
-        promotion = PIECES.QUEEN
-      }
-
-      dispatch(pieceSelected(from))
-
-      await new Promise(resolve => setTimeout(resolve, AI_MOVE_DELAY))
-
-      dispatch(
-        moveInitiated(fen, { from, to, promotion })
+      await new Promise(
+        resolve => setTimeout(resolve, AI_MOVE_DELAY)
       )
-    }
 
-    if (chess?.turn === AI_COLOR) {
-      performAiMove()
+      moveInitiated(chess, move.from, move.to)
     }
+  , [chess, pieceSelected, moveInitiated])
 
-  }, [dispatch, chess])
+  useEffect(() => {
+    if (!gameOver && turn === AI_COLOR) {
+      performMove()
+    }
+  }, [performMove, gameOver, turn])
 }

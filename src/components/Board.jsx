@@ -1,9 +1,9 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import {
-  selectActiveSquare,
-  selectChess
+  selectChess,
+  selectActiveSquare
 } from '../selectors'
 
 import COLORS, {
@@ -12,15 +12,14 @@ import COLORS, {
 
 import usePieceSelected from '../hooks/usePieceSelected'
 import useMoveInitiated from '../hooks/useMoveInitiated'
+
 import Square from './Square'
 
 export default function Board() {
   const chess = useSelector(selectChess)
   const selectedSquare = useSelector(selectActiveSquare)
-
-  const dispatch = useDispatch()
-  const pieceSelected = usePieceSelected(dispatch)
-  const moveInitiated = useMoveInitiated(dispatch, chess, selectedSquare)
+  const pieceSelected = usePieceSelected()
+  const moveInitiated = useMoveInitiated()
 
   if (!chess) {
     return <div className="chess-board--loading"/>
@@ -39,8 +38,8 @@ export default function Board() {
           squareId === selectedSquare?.id
         )
 
-        const isTurn = (
-          chess.turn == USER_COLOR
+        const isPlayerTurn = (
+          chess.turn === USER_COLOR
         )
 
         const isTargeted = (
@@ -51,11 +50,15 @@ export default function Board() {
           isTargeted ? selectedSquare : null
         )
 
-        const onClick = isTurn ? (
-          isTargeted ? moveInitiated : (
-              piece ? pieceSelected : null
-            )
-          ) : null
+        let onClick = null
+
+        if (isPlayerTurn) {
+          if (isTargeted) {
+            onClick = (squareId) => moveInitiated(chess, selectedSquare.id, squareId)
+          } else if (piece?.color === USER_COLOR) {
+            onClick = (squareId) => pieceSelected(squareId)
+          }
+        }
 
         return (
           <Square

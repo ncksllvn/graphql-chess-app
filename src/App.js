@@ -1,18 +1,29 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect } from 'react';
 
-import { selectChess } from './selectors'
-import useStartApp from './hooks/useStartApp'
+import { GET_CHESS } from './graphql'
+import { APP_STARTED } from './constants/actions'
+
 import useAI from './hooks/useAI'
+import useAPI from './hooks/useAPI'
+
 import Board from './components/Board'
 import Log from './components/Log'
 
 export default function App() {
-  const dispatch = useDispatch()
-  const chess = useSelector(selectChess)
+  const callAPI = useAPI()
 
-  useStartApp(dispatch)
-  useAI(dispatch, chess)
+  useEffect(() => {
+    callAPI({
+      query: GET_CHESS,
+      types: [
+        APP_STARTED.REQUEST,
+        APP_STARTED.RECEIVE,
+        APP_STARTED.FAILURE
+      ]
+    })
+  }, [callAPI])
+
+  useAI()
 
   return (
     <>
