@@ -1,11 +1,10 @@
 import { useEffect, useCallback } from 'react'
-import { useSelector } from 'react-redux'
+
+import useSelector, { selectChess } from './useSelector'
 
 import {
   AI_COLOR
 } from '../constants/colors'
-
-import { selectChess } from '../selectors'
 
 import usePieceSelected from './usePieceSelected'
 import useMoveInitiated from './useMoveInitiated'

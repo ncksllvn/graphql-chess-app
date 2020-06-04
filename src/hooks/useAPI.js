@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useDispatch } from 'react-redux'
+import useDispatch from './useDispatch'
 
 const serverUrl = process.env.REACT_APP_API
 const method = 'POST'

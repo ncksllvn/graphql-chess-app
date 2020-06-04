@@ -1,11 +1,11 @@
 import { useEffect, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 
-import {
+import useDispatch from './useDispatch'
+import useSelector, {
   selectAppStatus,
   selectChess,
   selectUI
-} from '../selectors'
+} from './useSelector'
 
 import {
   EVENT_LOGGED

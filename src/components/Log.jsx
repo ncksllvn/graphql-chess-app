@@ -1,8 +1,6 @@
 import React, { useRef } from 'react'
-import { useSelector } from 'react-redux'
 
-import { selectGameLog } from '../selectors'
-
+import useSelector, { selectGameLog } from '../hooks/useSelector'
 import useLog from '../hooks/useLog'
 import useScrollToBottom from '../hooks/useScrollToBottom'
 

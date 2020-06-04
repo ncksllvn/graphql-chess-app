@@ -1,4 +1,4 @@
-export const CALL_API = 'CALL_API'
+export const INIT_STATE = 'INIT_STATE'
 
 export const APP_STARTED = {
   REQUEST: 'chess/REQUEST',
