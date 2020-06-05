@@ -7,7 +7,7 @@ import useAI from './hooks/useAI'
 import useAPI from './hooks/useAPI'
 
 import Board from './components/Board'
-import Log from './components/Log'
+import GameLog from './components/GameLog'
 
 export default function App() {
   const callAPI = useAPI()
@@ -28,7 +28,7 @@ export default function App() {
   return (
     <>
       <Board/>
-      <Log/>
+      <GameLog/>
     </>
   )
 }

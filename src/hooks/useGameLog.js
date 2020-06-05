@@ -14,7 +14,7 @@ import {
 import { piecesBySymbol } from '../constants/pieces'
 import { colorsBySymbol } from '../constants/colors'
 
-export default function useLog() {
+export default function useGameLog() {
   const dispatch = useAppDispatch()
   const appStatus = useAppState(selectAppStatus)
   const chess = useAppState(selectChess)
