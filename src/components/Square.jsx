@@ -4,7 +4,7 @@ import PIECE_VISUALS from '../constants/visuals'
 import { piecesBySymbol } from '../constants/pieces'
 import COLORS, { colorsBySymbol } from '../constants/colors'
 
-export default function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
+function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
   let symbol = null
   let ariaLabel = `${squareId} is empty`
   let classNames = ['chess-board-square', `chess-board-square--${squareId}`]
@@ -56,3 +56,5 @@ export default function Square({ squareId, piece, isDark, isActive, targetedBy, 
     </button>
   )
 }
+
+export default React.memo(Square)
