@@ -6,15 +6,13 @@ import COLORS, {
 } from '../constants/colors'
 
 import useActiveSquare from '../hooks/useActiveSquare'
-import usePieceSelected from '../hooks/usePieceSelected'
 import useMoveInitiated from '../hooks/useMoveInitiated'
 
 import Square from './Square'
 
 export default function Board() {
   const chess = useSelector(selectChess)
-  const selectedSquare = useActiveSquare()
-  const pieceSelected = usePieceSelected()
+  const [activeSquare, setActiveSquare] = useActiveSquare()
   const moveInitiated = useMoveInitiated()
 
   if (!chess) {
@@ -32,7 +30,7 @@ export default function Board() {
       {chess.squares.map(
         ({ id: squareId, piece, isDark }) => {
           const isActive = (
-            squareId === selectedSquare?.id
+            squareId === activeSquare?.id
           )
 
           const isPlayerTurn = (
@@ -40,20 +38,20 @@ export default function Board() {
           )
 
           const isTargeted = (
-            selectedSquare?.targets?.includes(squareId)
+            activeSquare?.targets?.includes(squareId)
           )
 
           const targetedBy = (
-            isTargeted ? selectedSquare : null
+            isTargeted ? activeSquare : null
           )
 
           let onClick = null
 
           if (isPlayerTurn) {
             if (isTargeted) {
-              onClick = (squareId) => moveInitiated(chess, selectedSquare.id, squareId)
+              onClick = (squareId) => moveInitiated(chess, activeSquare.id, squareId)
             } else if (piece?.color === USER_COLOR) {
-              onClick = (squareId) => pieceSelected(squareId)
+              onClick = (squareId) => setActiveSquare(squareId)
             }
           }
 

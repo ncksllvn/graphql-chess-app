@@ -6,7 +6,7 @@ import {
   AI_COLOR
 } from '../constants/colors'
 
-import usePieceSelected from './usePieceSelected'
+import useActiveSquare from './useActiveSquare'
 import useMoveInitiated from './useMoveInitiated'
 
 const AI_MOVE_DELAY = 1000
@@ -16,7 +16,7 @@ export default function useAI() {
   const turn = chess?.turn
   const gameOver = chess?.gameOver
 
-  const pieceSelected = usePieceSelected()
+  const [, setActiveSquare] = useActiveSquare()
   const moveInitiated = useMoveInitiated()
 
   const performMove = useCallback(
@@ -28,7 +28,7 @@ export default function useAI() {
 
       const move = analysis?.bestMove ?? moves[0]
 
-      pieceSelected(move.from)
+      setActiveSquare(move.from)
 
       await new Promise(
         resolve => setTimeout(resolve, AI_MOVE_DELAY)
@@ -36,7 +36,7 @@ export default function useAI() {
 
       moveInitiated(chess, move.from, move.to)
     }
-  , [chess, pieceSelected, moveInitiated])
+  , [chess, setActiveSquare, moveInitiated])
 
   useEffect(() => {
     if (!gameOver && turn === AI_COLOR) {
