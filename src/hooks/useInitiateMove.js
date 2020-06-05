@@ -6,10 +6,10 @@ import { MOVE_INITIATED } from '../constants/actions'
 import PIECES from '../constants/pieces'
 import useAPI from './useAPI'
 
-export default function useMoveInitiated() {
+export default function useInitiateMove() {
   const callAPI = useAPI()
 
-  const moveInitiated = useCallback(
+  const initiateMove = useCallback(
     (chess, sourceSquareId, destinationSquareId) => {
       let { from, to, promotion } = chess.moves.find(
         (move) => (
@@ -37,5 +37,5 @@ export default function useMoveInitiated() {
     }
   , [callAPI])
 
-  return moveInitiated
+  return initiateMove
 }

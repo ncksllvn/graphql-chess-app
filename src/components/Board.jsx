@@ -6,14 +6,14 @@ import COLORS, {
 
 import useAppState, { selectChess } from '../hooks/useAppState'
 import useActiveSquare from '../hooks/useActiveSquare'
-import useMoveInitiated from '../hooks/useMoveInitiated'
+import useInitiateMove from '../hooks/useInitiateMove'
 
 import Square from './Square'
 
 export default function Board() {
   const chess = useAppState(selectChess)
   const [activeSquare, setActiveSquare] = useActiveSquare()
-  const moveInitiated = useMoveInitiated()
+  const moveInitiated = useInitiateMove()
 
   if (!chess) {
     return <div className="chess-board--loading"/>

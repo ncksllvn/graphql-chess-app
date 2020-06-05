@@ -6,7 +6,7 @@ import {
 
 import useAppState, { selectChess } from './useAppState'
 import useActiveSquare from './useActiveSquare'
-import useMoveInitiated from './useMoveInitiated'
+import useInitiateMove from './useInitiateMove'
 
 const AI_MOVE_DELAY = 1000
 
@@ -16,7 +16,7 @@ export default function useAI() {
   const gameOver = chess?.gameOver
 
   const [, setActiveSquare] = useActiveSquare()
-  const moveInitiated = useMoveInitiated()
+  const moveInitiated = useInitiateMove()
 
   const performMove = useCallback(
     async () => {
