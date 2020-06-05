@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 
-export const StateContext = React.createContext(null);
+export const AppStateContext = React.createContext(null);
 
-export default function useSelector(selector) {
-  const state = useContext(StateContext)
+export default function useAppState(selector) {
+  const state = useContext(AppStateContext)
   return React.useMemo(
     () => {
       return selector(state)

@@ -6,8 +6,8 @@ import './style/breakpoints.css';
 
 import { INIT_STATE } from './constants/actions'
 
-import { DispatchContext } from './hooks/useDispatch'
-import { StateContext } from './hooks/useSelector'
+import { AppDispatchContext } from './hooks/useAppDispatch'
+import { AppStateContext } from './hooks/useAppState'
 
 import App from './App';
 import reducer from './reducers'
@@ -20,11 +20,11 @@ function Root() {
 
   return (
     <React.StrictMode>
-      <StateContext.Provider value={state}>
-        <DispatchContext.Provider value={dispatch}>
+      <AppStateContext.Provider value={state}>
+        <AppDispatchContext.Provider value={dispatch}>
           <App/>
-        </DispatchContext.Provider>
-      </StateContext.Provider>
+        </AppDispatchContext.Provider>
+      </AppStateContext.Provider>
     </React.StrictMode>
   );
 }

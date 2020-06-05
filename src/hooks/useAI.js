@@ -1,18 +1,17 @@
 import { useEffect, useCallback } from 'react'
 
-import useSelector, { selectChess } from './useSelector'
-
 import {
   AI_COLOR
 } from '../constants/colors'
 
+import useAppState, { selectChess } from './useAppState'
 import useActiveSquare from './useActiveSquare'
 import useMoveInitiated from './useMoveInitiated'
 
 const AI_MOVE_DELAY = 1000
 
 export default function useAI() {
-  const chess = useSelector(selectChess)
+  const chess = useAppState(selectChess)
   const turn = chess?.turn
   const gameOver = chess?.gameOver
 

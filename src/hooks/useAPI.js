@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
-import useDispatch from './useDispatch'
+
+import useAppDispatch from './useAppDispatch'
 
 const serverUrl = process.env.REACT_APP_API
 const method = 'POST'
@@ -8,7 +9,7 @@ const headers =  {
 }
 
 export default function useAPI() {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   return useCallback(
     async ({ query, variables, types }) => {

@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 
-import useSelector, { selectGameLog } from '../hooks/useSelector'
+import useAppState, { selectGameLog } from '../hooks/useAppState'
 import useLog from '../hooks/useLog'
 import useScrollToBottom from '../hooks/useScrollToBottom'
 
 // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_log_role
 export default function Log(){
-  const gameLog = useSelector(selectGameLog)
+  const gameLog = useAppState(selectGameLog)
   const ref = useRef(null)
 
   useLog()

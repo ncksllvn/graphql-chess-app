@@ -1,17 +1,17 @@
 import React from 'react'
-import useSelector, { selectChess } from '../hooks/useSelector'
 
 import COLORS, {
   USER_COLOR
 } from '../constants/colors'
 
+import useAppState, { selectChess } from '../hooks/useAppState'
 import useActiveSquare from '../hooks/useActiveSquare'
 import useMoveInitiated from '../hooks/useMoveInitiated'
 
 import Square from './Square'
 
 export default function Board() {
-  const chess = useSelector(selectChess)
+  const chess = useAppState(selectChess)
   const [activeSquare, setActiveSquare] = useActiveSquare()
   const moveInitiated = useMoveInitiated()
 

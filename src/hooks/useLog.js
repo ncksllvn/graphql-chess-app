@@ -1,11 +1,11 @@
 import { useEffect, useCallback } from 'react'
 
-import useDispatch from './useDispatch'
-import useSelector, {
+import useAppDispatch from './useAppDispatch'
+import useAppState, {
   selectAppStatus,
   selectChess,
   selectUI
-} from './useSelector'
+} from './useAppState'
 
 import {
   EVENT_LOGGED
@@ -15,10 +15,10 @@ import { piecesBySymbol } from '../constants/pieces'
 import { colorsBySymbol } from '../constants/colors'
 
 export default function useLog() {
-  const dispatch = useDispatch()
-  const appStatus = useSelector(selectAppStatus)
-  const chess = useSelector(selectChess)
-  const ui = useSelector(selectUI)
+  const dispatch = useAppDispatch()
+  const appStatus = useAppState(selectAppStatus)
+  const chess = useAppState(selectChess)
+  const ui = useAppState(selectUI)
 
   const sendToLog = useCallback(
     (data) => {

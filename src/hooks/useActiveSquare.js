@@ -4,17 +4,17 @@ import {
   PIECE_SELECTED
 } from '../constants/actions'
 
-import useDispatch from './useDispatch'
+import useAppDispatch from './useAppDispatch'
 
-import useSelector, {
+import useAppState, {
   selectUI,
   selectChess
-} from './useSelector'
+} from './useAppState'
 
 export default function useActiveSquare() {
-  const dispatch = useDispatch()
-  const chess = useSelector(selectChess)
-  const { activeSquareId } = useSelector(selectUI)
+  const dispatch = useAppDispatch()
+  const chess = useAppState(selectChess)
+  const { activeSquareId } = useAppState(selectUI)
 
   const squares = chess?.squares
   const movesBySquare = chess?.movesBySquare
