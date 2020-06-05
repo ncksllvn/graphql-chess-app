@@ -4,7 +4,7 @@ import {
 } from '../constants/actions'
 
 const initialState = {
-  selectedSquareId: null,
+  activeSquareId: null,
   pendingMove: null
 }
 
@@ -12,12 +12,12 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case PIECE_SELECTED: {
       const canceled = (
-        action.squareId === state.selectedSquareId
+        action.squareId === state.activeSquareId
       )
 
       return {
         ...state,
-        selectedSquareId: canceled ? null : action.squareId
+        activeSquareId: canceled ? null : action.squareId
       }
     }
 
@@ -25,7 +25,7 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         pendingMove: null,
-        selectedSquareId: null
+        activeSquareId: null
       }
     }
 

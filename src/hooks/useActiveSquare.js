@@ -14,19 +14,19 @@ import useSelector, {
 export default function useActiveSquare() {
   const dispatch = useDispatch()
   const chess = useSelector(selectChess)
-  const { selectedSquareId } = useSelector(selectUI)
+  const { activeSquareId } = useSelector(selectUI)
 
   const squares = chess?.squares
   const movesBySquare = chess?.movesBySquare
 
   const activeSquare = React.useMemo(() => {
-    if (!selectedSquareId) {
+    if (!activeSquareId) {
       return null
     }
 
     const square = squares.find(
       (square) =>
-        square.id === selectedSquareId
+        square.id === activeSquareId
       )
 
     const moves = movesBySquare[square.id]
@@ -38,7 +38,7 @@ export default function useActiveSquare() {
       ...square,
       targets
     }
-  }, [selectedSquareId, squares, movesBySquare])
+  }, [activeSquareId, squares, movesBySquare])
 
   const setActiveSquare = React.useCallback(
     (squareId) => (
