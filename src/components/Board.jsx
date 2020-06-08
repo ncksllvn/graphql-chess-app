@@ -13,7 +13,7 @@ import Square from './Square'
 export default function Board() {
   const chess = useAppState(selectChess)
   const [activeSquare, setActiveSquare] = useActiveSquare()
-  const moveInitiated = useInitiateMove()
+  const initiateMove = useInitiateMove()
 
   if (!chess) {
     return <div className="chess-board--loading"/>
@@ -49,7 +49,7 @@ export default function Board() {
 
           if (isPlayerTurn) {
             if (isTargeted) {
-              onClick = (squareId) => moveInitiated(chess, activeSquare.id, squareId)
+              onClick = (squareId) => initiateMove(chess, activeSquare.id, squareId)
             } else if (piece?.color === USER_COLOR) {
               onClick = (squareId) => setActiveSquare(squareId)
             }
