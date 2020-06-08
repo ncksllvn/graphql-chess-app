@@ -25,16 +25,16 @@ export default function Board() {
     classNames.push('chess-board--black-turn')
   }
 
+  const isPlayerTurn = (
+    chess.turn === USER_COLOR
+  )
+
   return (
     <div className={classNames.join(' ')}>
       {chess.squares.map(
         ({ id: squareId, piece, isDark }) => {
           const isActive = (
             squareId === activeSquare?.id
-          )
-
-          const isPlayerTurn = (
-            chess.turn === USER_COLOR
           )
 
           const isTargeted = (
