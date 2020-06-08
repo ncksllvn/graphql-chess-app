@@ -30,9 +30,11 @@ export default function useActiveSquare() {
       )
 
     const moves = movesBySquare[square.id]
-    const targets = moves?.map(
+    const targets = new Set(
+      moves?.map(
         (move) => move.to
       )
+    )
 
     return {
       ...square,

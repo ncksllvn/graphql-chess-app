@@ -38,7 +38,7 @@ export default function Board() {
           )
 
           const isTargeted = (
-            activeSquare?.targets?.includes(squareId)
+            activeSquare?.targets?.has(squareId)
           )
 
           const targetedBy = (
