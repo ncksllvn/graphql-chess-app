@@ -1,0 +1,552 @@
+{
+  "data": {
+    "chess": {
+      "analysis": {
+        "bestMove": {
+          "from": "e2",
+          "to": "e4",
+          "flags": ""
+        },
+        "ponderMove": null
+      },
+      "board": [
+        {
+          "rank": 8,
+          "squares": [
+            {
+              "file": "a",
+              "piece": {
+                "type": "r",
+                "color": "b"
+              }
+            },
+            {
+              "file": "b",
+              "piece": {
+                "type": "n",
+                "color": "b"
+              }
+            },
+            {
+              "file": "c",
+              "piece": {
+                "type": "b",
+                "color": "b"
+              }
+            },
+            {
+              "file": "d",
+              "piece": {
+                "type": "q",
+                "color": "b"
+              }
+            },
+            {
+              "file": "e",
+              "piece": {
+                "type": "k",
+                "color": "b"
+              }
+            },
+            {
+              "file": "f",
+              "piece": {
+                "type": "b",
+                "color": "b"
+              }
+            },
+            {
+              "file": "g",
+              "piece": {
+                "type": "n",
+                "color": "b"
+              }
+            },
+            {
+              "file": "h",
+              "piece": {
+                "type": "r",
+                "color": "b"
+              }
+            }
+          ]
+        },
+        {
+          "rank": 7,
+          "squares": [
+            {
+              "file": "a",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            },
+            {
+              "file": "b",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            },
+            {
+              "file": "c",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            },
+            {
+              "file": "d",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            },
+            {
+              "file": "e",
+              "piece": null
+            },
+            {
+              "file": "f",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            },
+            {
+              "file": "g",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            },
+            {
+              "file": "h",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "squares": [
+            {
+              "file": "a",
+              "piece": null
+            },
+            {
+              "file": "b",
+              "piece": null
+            },
+            {
+              "file": "c",
+              "piece": null
+            },
+            {
+              "file": "d",
+              "piece": null
+            },
+            {
+              "file": "e",
+              "piece": null
+            },
+            {
+              "file": "f",
+              "piece": null
+            },
+            {
+              "file": "g",
+              "piece": null
+            },
+            {
+              "file": "h",
+              "piece": null
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "squares": [
+            {
+              "file": "a",
+              "piece": null
+            },
+            {
+              "file": "b",
+              "piece": null
+            },
+            {
+              "file": "c",
+              "piece": null
+            },
+            {
+              "file": "d",
+              "piece": null
+            },
+            {
+              "file": "e",
+              "piece": {
+                "type": "p",
+                "color": "b"
+              }
+            },
+            {
+              "file": "f",
+              "piece": null
+            },
+            {
+              "file": "g",
+              "piece": null
+            },
+            {
+              "file": "h",
+              "piece": null
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "squares": [
+            {
+              "file": "a",
+              "piece": null
+            },
+            {
+              "file": "b",
+              "piece": null
+            },
+            {
+              "file": "c",
+              "piece": null
+            },
+            {
+              "file": "d",
+              "piece": null
+            },
+            {
+              "file": "e",
+              "piece": null
+            },
+            {
+              "file": "f",
+              "piece": null
+            },
+            {
+              "file": "g",
+              "piece": null
+            },
+            {
+              "file": "h",
+              "piece": null
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "squares": [
+            {
+              "file": "a",
+              "piece": null
+            },
+            {
+              "file": "b",
+              "piece": null
+            },
+            {
+              "file": "c",
+              "piece": null
+            },
+            {
+              "file": "d",
+              "piece": null
+            },
+            {
+              "file": "e",
+              "piece": null
+            },
+            {
+              "file": "f",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            },
+            {
+              "file": "g",
+              "piece": null
+            },
+            {
+              "file": "h",
+              "piece": null
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "squares": [
+            {
+              "file": "a",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            },
+            {
+              "file": "b",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            },
+            {
+              "file": "c",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            },
+            {
+              "file": "d",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            },
+            {
+              "file": "e",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            },
+            {
+              "file": "f",
+              "piece": null
+            },
+            {
+              "file": "g",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            },
+            {
+              "file": "h",
+              "piece": {
+                "type": "p",
+                "color": "w"
+              }
+            }
+          ]
+        },
+        {
+          "rank": 1,
+          "squares": [
+            {
+              "file": "a",
+              "piece": {
+                "type": "r",
+                "color": "w"
+              }
+            },
+            {
+              "file": "b",
+              "piece": {
+                "type": "n",
+                "color": "w"
+              }
+            },
+            {
+              "file": "c",
+              "piece": {
+                "type": "b",
+                "color": "w"
+              }
+            },
+            {
+              "file": "d",
+              "piece": {
+                "type": "q",
+                "color": "w"
+              }
+            },
+            {
+              "file": "e",
+              "piece": {
+                "type": "k",
+                "color": "w"
+              }
+            },
+            {
+              "file": "f",
+              "piece": {
+                "type": "b",
+                "color": "w"
+              }
+            },
+            {
+              "file": "g",
+              "piece": {
+                "type": "n",
+                "color": "w"
+              }
+            },
+            {
+              "file": "h",
+              "piece": {
+                "type": "r",
+                "color": "w"
+              }
+            }
+          ]
+        }
+      ],
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq e6 0 2",
+      "gameOver": false,
+      "inCheck": false,
+      "inCheckmate": false,
+      "inDraw": false,
+      "inStalemate": false,
+      "insufficientMaterial": false,
+      "inThreefoldRepetition": false,
+      "moves": [
+        {
+          "color": "w",
+          "from": "f3",
+          "to": "f4",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "a2",
+          "to": "a3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "a2",
+          "to": "a4",
+          "promotion": null,
+          "flags": "b"
+        },
+        {
+          "color": "w",
+          "from": "b2",
+          "to": "b3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "b2",
+          "to": "b4",
+          "promotion": null,
+          "flags": "b"
+        },
+        {
+          "color": "w",
+          "from": "c2",
+          "to": "c3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "c2",
+          "to": "c4",
+          "promotion": null,
+          "flags": "b"
+        },
+        {
+          "color": "w",
+          "from": "d2",
+          "to": "d3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "d2",
+          "to": "d4",
+          "promotion": null,
+          "flags": "b"
+        },
+        {
+          "color": "w",
+          "from": "e2",
+          "to": "e3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "e2",
+          "to": "e4",
+          "promotion": null,
+          "flags": "b"
+        },
+        {
+          "color": "w",
+          "from": "g2",
+          "to": "g3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "g2",
+          "to": "g4",
+          "promotion": null,
+          "flags": "b"
+        },
+        {
+          "color": "w",
+          "from": "h2",
+          "to": "h3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "h2",
+          "to": "h4",
+          "promotion": null,
+          "flags": "b"
+        },
+        {
+          "color": "w",
+          "from": "b1",
+          "to": "a3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "b1",
+          "to": "c3",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "e1",
+          "to": "f2",
+          "promotion": null,
+          "flags": "n"
+        },
+        {
+          "color": "w",
+          "from": "g1",
+          "to": "h3",
+          "promotion": null,
+          "flags": "n"
+        }
+      ],
+      "turn": "w"
+    }
+  }
+}

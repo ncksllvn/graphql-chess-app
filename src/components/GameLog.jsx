@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 
-import useAppState, { selectGameLog } from '../hooks/useAppState'
+import { selectGameLog } from '../constants/selectors'
+
+import useAppState from '../hooks/useAppState'
 import useGameLog from '../hooks/useGameLog'
 import useScrollToBottom from '../hooks/useScrollToBottom'
 

@@ -4,7 +4,9 @@ import COLORS, {
   USER_COLOR
 } from '../constants/colors'
 
-import useAppState, { selectChess } from '../hooks/useAppState'
+import { selectChess } from '../constants/selectors'
+
+import useAppState from '../hooks/useAppState'
 import useActiveSquare from '../hooks/useActiveSquare'
 import useInitiateMove from '../hooks/useInitiateMove'
 

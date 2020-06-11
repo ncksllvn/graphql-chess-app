@@ -1,11 +1,13 @@
 import { useEffect, useCallback } from 'react'
 
 import useAppDispatch from './useAppDispatch'
-import useAppState, {
+import useAppState from './useAppState'
+
+import {
   selectAppStatus,
   selectChess,
   selectUI
-} from './useAppState'
+} from '../constants/selectors'
 
 import {
   EVENT_LOGGED

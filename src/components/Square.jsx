@@ -51,7 +51,7 @@ function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
       aria-pressed={isActive}
       disabled={!onClick}
       className={classNames.join(' ')}
-      onClick={() => onClick(squareId)}>
+      onClick={onClick ? () => onClick(squareId) : null}>
       {symbol}
     </button>
   )

@@ -4,7 +4,9 @@ import {
   AI_COLOR
 } from '../constants/colors'
 
-import useAppState, { selectChess } from './useAppState'
+import { selectChess } from '../constants/selectors'
+
+import useAppState from './useAppState'
 import useActiveSquare from './useActiveSquare'
 import useInitiateMove from './useInitiateMove'
 

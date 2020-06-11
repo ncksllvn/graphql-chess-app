@@ -1,0 +1,1756 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders active square and targets 1`] = `
+<div
+  className="chess-board"
+>
+  <button
+    aria-label="a8 contains a BLACK ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♜
+  </button>
+  <button
+    aria-label="b8 contains a BLACK KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♞
+  </button>
+  <button
+    aria-label="c8 contains a BLACK BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♝
+  </button>
+  <button
+    aria-label="d8 contains a BLACK QUEEN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♛
+  </button>
+  <button
+    aria-label="e8 contains a BLACK KING"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♚
+  </button>
+  <button
+    aria-label="f8 contains a BLACK BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♝
+  </button>
+  <button
+    aria-label="g8 contains a BLACK KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♞
+  </button>
+  <button
+    aria-label="h8 contains a BLACK ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♜
+  </button>
+  <button
+    aria-label="a7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="b7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="c7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="d7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="e7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="f7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="g7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="h7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="a6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="Move PAWN on g2 to g4"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g4 chess-board-square--clickable chess-board-square--targeted"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  />
+  <button
+    aria-label="h4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="Move PAWN on g2 to g3"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g3 chess-board-square--dark chess-board-square--clickable chess-board-square--targeted"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  />
+  <button
+    aria-label="h3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a2 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="b2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="c2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c2 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="d2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="e2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e2 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="f2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="g2 contains a WHITE PAWN selected for move. Use the tab keys to select a square to initiate move.  Press again to cancel selection."
+    aria-pressed={true}
+    className="chess-board-square chess-board-square--g2 chess-board-square--clickable chess-board-square--active"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="h2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="a1 contains a WHITE ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♖
+  </button>
+  <button
+    aria-label="b1 contains a WHITE KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♘
+  </button>
+  <button
+    aria-label="c1 contains a WHITE BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♗
+  </button>
+  <button
+    aria-label="d1 contains a WHITE QUEEN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♕
+  </button>
+  <button
+    aria-label="e1 contains a WHITE KING"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♔
+  </button>
+  <button
+    aria-label="f1 contains a WHITE BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♗
+  </button>
+  <button
+    aria-label="g1 contains a WHITE KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♘
+  </button>
+  <button
+    aria-label="h1 contains a WHITE ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♖
+  </button>
+</div>
+`;
+
+exports[`renders after a move 1`] = `
+<div
+  className="chess-board chess-board--black-turn"
+>
+  <button
+    aria-label="a8 contains a BLACK ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♜
+  </button>
+  <button
+    aria-label="b8 contains a BLACK KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♞
+  </button>
+  <button
+    aria-label="c8 contains a BLACK BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♝
+  </button>
+  <button
+    aria-label="d8 contains a BLACK QUEEN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♛
+  </button>
+  <button
+    aria-label="e8 contains a BLACK KING"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♚
+  </button>
+  <button
+    aria-label="f8 contains a BLACK BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♝
+  </button>
+  <button
+    aria-label="g8 contains a BLACK KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♞
+  </button>
+  <button
+    aria-label="h8 contains a BLACK ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♜
+  </button>
+  <button
+    aria-label="a7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="b7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="c7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="d7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="e7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="f7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="g7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="h7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="a6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f4 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="g4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a2"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="b2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b2 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="c2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c2"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="d2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d2 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="e2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e2"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="f2 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f2 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g2"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="h2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h2 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="a1 contains a WHITE ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a1 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♖
+  </button>
+  <button
+    aria-label="b1 contains a WHITE KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b1"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♘
+  </button>
+  <button
+    aria-label="c1 contains a WHITE BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c1 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♗
+  </button>
+  <button
+    aria-label="d1 contains a WHITE QUEEN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d1"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♕
+  </button>
+  <button
+    aria-label="e1 contains a WHITE KING"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e1 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♔
+  </button>
+  <button
+    aria-label="f1 contains a WHITE BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f1"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♗
+  </button>
+  <button
+    aria-label="g1 contains a WHITE KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g1 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♘
+  </button>
+  <button
+    aria-label="h1 contains a WHITE ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h1"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♖
+  </button>
+</div>
+`;
+
+exports[`renders loading 1`] = `
+<div
+  className="chess-board--loading"
+/>
+`;
+
+exports[`renders starting position 1`] = `
+<div
+  className="chess-board"
+>
+  <button
+    aria-label="a8 contains a BLACK ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♜
+  </button>
+  <button
+    aria-label="b8 contains a BLACK KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♞
+  </button>
+  <button
+    aria-label="c8 contains a BLACK BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♝
+  </button>
+  <button
+    aria-label="d8 contains a BLACK QUEEN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♛
+  </button>
+  <button
+    aria-label="e8 contains a BLACK KING"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♚
+  </button>
+  <button
+    aria-label="f8 contains a BLACK BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♝
+  </button>
+  <button
+    aria-label="g8 contains a BLACK KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g8 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♞
+  </button>
+  <button
+    aria-label="h8 contains a BLACK ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h8 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♜
+  </button>
+  <button
+    aria-label="a7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="b7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="c7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="d7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="e7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="f7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="g7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g7 chess-board-square--dark chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="h7 contains a BLACK PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h7 chess-board-square--black-piece"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    ♟
+  </button>
+  <button
+    aria-label="a6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g6"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h6 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h6 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g5 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h5 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h5"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g4"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h4 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h4 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="b3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="c3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="d3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="e3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="f3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="g3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g3 chess-board-square--dark"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="h3 is empty"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h3"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />
+  <button
+    aria-label="a2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a2 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="b2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="c2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c2 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="d2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="e2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e2 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="f2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="g2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g2 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="h2 contains a WHITE PAWN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h2 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♙
+  </button>
+  <button
+    aria-label="a1 contains a WHITE ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--a1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♖
+  </button>
+  <button
+    aria-label="b1 contains a WHITE KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--b1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♘
+  </button>
+  <button
+    aria-label="c1 contains a WHITE BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--c1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♗
+  </button>
+  <button
+    aria-label="d1 contains a WHITE QUEEN"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--d1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♕
+  </button>
+  <button
+    aria-label="e1 contains a WHITE KING"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--e1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♔
+  </button>
+  <button
+    aria-label="f1 contains a WHITE BISHOP"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--f1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♗
+  </button>
+  <button
+    aria-label="g1 contains a WHITE KNIGHT"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--g1 chess-board-square--dark chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♘
+  </button>
+  <button
+    aria-label="h1 contains a WHITE ROOK"
+    aria-pressed={false}
+    className="chess-board-square chess-board-square--h1 chess-board-square--clickable"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    ♖
+  </button>
+</div>
+`;

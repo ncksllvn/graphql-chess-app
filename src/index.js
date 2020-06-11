@@ -1,37 +1,23 @@
-import React, { useReducer } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import './style/index.css';
-import './style/breakpoints.css';
+import './style/index.css'
+import './style/breakpoints.css'
 
-import { INIT_STATE } from './constants/actions'
+import App from './App'
+import Provider from './components/Provider'
 
-import { AppDispatchContext } from './hooks/useAppDispatch'
-import { AppStateContext } from './hooks/useAppState'
+import * as serviceWorker from './serviceWorker'
 
-import App from './App';
-import reducer from './reducers'
-
-import * as serviceWorker from './serviceWorker';
-
-function Root() {
-  const initialState = reducer(undefined, { type: INIT_STATE })
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  return (
-    <React.StrictMode>
-      <AppStateContext.Provider value={state}>
-        <AppDispatchContext.Provider value={dispatch}>
-          <App/>
-        </AppDispatchContext.Provider>
-      </AppStateContext.Provider>
-    </React.StrictMode>
-  );
-}
-
-ReactDOM.render(<Root/>, document.getElementById('root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider>
+      <App/>
+    </Provider>
+  </React.StrictMode>
+, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.unregister()

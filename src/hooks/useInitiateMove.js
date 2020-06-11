@@ -9,7 +9,7 @@ import useAPI from './useAPI'
 export default function useInitiateMove() {
   const callAPI = useAPI()
 
-  const initiateMove = useCallback(
+  return useCallback(
     (chess, sourceSquareId, destinationSquareId) => {
       let { from, to, promotion } = chess.moves.find(
         (move) => (
@@ -36,6 +36,4 @@ export default function useInitiateMove() {
       })
     }
   , [callAPI])
-
-  return initiateMove
 }
