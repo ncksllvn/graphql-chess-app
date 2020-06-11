@@ -3,7 +3,13 @@ import React from 'react'
 // https://redd.gitbook.io/msw/api/graphql
 import { rest, graphql } from 'msw'
 import { setupServer } from 'msw/node'
-import { render, fireEvent, waitFor, act, screen } from '@testing-library/react'
+
+// https://testing-library.com/docs/react-testing-library/cheatsheet#docsNav
+import {
+  render,
+  screen,
+  findByText,
+} from '@testing-library/react'
 
 import App from '../App';
 import Provider from '../components/Provider'
@@ -21,14 +27,39 @@ beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
-test('it does things', async () => {
+test('plays chess', async () => {
   render(
     <Provider>
       <App/>
     </Provider>
   )
 
-  await waitFor(() => screen.getByText('♛'))
+  const gameLog = await screen.findByRole('log')
 
-  console.log(screen.debug())
+  await findByText(gameLog, 'initializing game', { exact: false })
+  await findByText(gameLog, 'game ready', { exact: false })
+
+  // Pawns
+  expect(screen.getAllByText('♟').length).toBe(8)
+  expect(screen.getAllByText('♙').length).toBe(8)
+
+  // Rooks
+  expect(screen.getAllByText('♜').length).toBe(2)
+  expect(screen.getAllByText('♖').length).toBe(2)
+
+  // Knights
+  expect(screen.getAllByText('♞').length).toBe(2)
+  expect(screen.getAllByText('♘').length).toBe(2)
+
+  // Bishops
+  expect(screen.getAllByText('♝').length).toBe(2)
+  expect(screen.getAllByText('♗').length).toBe(2)
+
+  // Queen
+  screen.getByText('♛')
+  screen.getByText('♕')
+
+  // Kings
+  screen.getByText('♚')
+  screen.getByText('♔')
 })
