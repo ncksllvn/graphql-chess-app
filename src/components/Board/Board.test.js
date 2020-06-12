@@ -10,7 +10,7 @@ import{
   QueryChess
 } from '../../testing/helpers'
 
-import Board from './index';
+import Board from '.';
 
 test('renders a loaded chess board', async () => {
   render(

@@ -4,7 +4,7 @@ import {
   screen,
 } from '@testing-library/react'
 
-import Provider from './index'
+import Provider from '.'
 
 test('renders without crashing', async () => {
   render(

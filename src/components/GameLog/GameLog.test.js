@@ -11,7 +11,7 @@ import{
   QueryChess
 } from '../../testing/helpers'
 
-import GameLog from './index';
+import GameLog from '.';
 
 test('renders game status', async () => {
   render(
