@@ -2,15 +2,15 @@ import React from 'react'
 
 import COLORS, {
   USER_COLOR
-} from '../constants/colors'
+} from '../../constants/colors'
 
-import { selectChess } from '../constants/selectors'
+import { selectChess } from '../../constants/selectors'
 
-import useAppState from '../hooks/useAppState'
-import useActiveSquare from '../hooks/useActiveSquare'
-import useInitiateMove from '../hooks/useInitiateMove'
+import useAppState from '../../hooks/useAppState'
+import useActiveSquare from '../../hooks/useActiveSquare'
+import useInitiateMove from '../../hooks/useInitiateMove'
 
-import Square from './Square'
+import Square from '../Square'
 
 export default function Board() {
   const chess = useAppState(selectChess)
@@ -18,7 +18,11 @@ export default function Board() {
   const initiateMove = useInitiateMove()
 
   if (!chess) {
-    return <div className="chess-board--loading"/>
+    return (
+      <div className="chess-board--loading" data-testid="chess-board--loading">
+        Loading...
+      </div>
+    )
   }
 
   const classNames= ['chess-board']
@@ -32,7 +36,7 @@ export default function Board() {
   )
 
   return (
-    <div className={classNames.join(' ')}>
+    <div className={classNames.join(' ')} data-testid="chess-board">
       {chess.squares.map(
         ({ id: squareId, piece, isDark }) => {
           const isActive = (

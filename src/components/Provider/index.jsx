@@ -1,11 +1,11 @@
 import React, { useReducer } from 'react';
 
-import { INIT_STATE } from '../constants/actions'
+import { INIT_STATE } from '../../constants/actions'
 
-import { AppDispatchContext } from '../hooks/useAppDispatch'
-import { AppStateContext } from '../hooks/useAppState'
+import { AppDispatchContext } from '../../hooks/useAppDispatch'
+import { AppStateContext } from '../../hooks/useAppState'
 
-import reducer from '../reducers'
+import reducer from '../../reducers'
 
 export default function Provider({ children }) {
   const initialState = reducer(undefined, { type: INIT_STATE })

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import PIECE_VISUALS from '../constants/visuals'
-import { piecesBySymbol } from '../constants/pieces'
-import COLORS, { colorsBySymbol } from '../constants/colors'
+import PIECE_VISUALS from '../../constants/visuals'
+import { piecesBySymbol } from '../../constants/pieces'
+import COLORS, { colorsBySymbol } from '../../constants/colors'
 
 function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
   let symbol = null
@@ -47,6 +47,7 @@ function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
   return (
     <button
       type="button"
+      data-testid={squareId}
       aria-label={ariaLabel}
       aria-pressed={isActive}
       disabled={!onClick}

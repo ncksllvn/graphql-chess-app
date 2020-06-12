@@ -43,7 +43,7 @@ const CHESS_FRAGMENT = `
 
 export const GET_CHESS = `
   ${CHESS_FRAGMENT}
-  {
+  query Chess {
     chess {
       ... ChessAttributes
     }
@@ -53,7 +53,7 @@ export const GET_CHESS = `
 export const MAKE_MOVE = `
   ${CHESS_FRAGMENT}
 
-  mutation makeMove($fen: String!, $move: MoveObjectInput!){
+  mutation Move($fen: String!, $move: MoveObjectInput!){
     chess: move (input: {
       fen: $fen,
       move: $move
