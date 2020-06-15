@@ -1,9 +1,15 @@
 import React from 'react'
 
 import PIECE_VISUALS from '../constants/visuals'
-import COLORS from '../constants/colors'
 
-import { getPieceLabel } from '../utils'
+import { piecesBySymbol } from '../constants/pieces'
+import COLORS, { colorsBySymbol } from '../constants/colors'
+
+function getPieceLabel(piece) {
+  const colorName = colorsBySymbol.get(piece.color)
+  const pieceName = piecesBySymbol.get(piece.type)
+  return `${colorName} ${pieceName}`.toLowerCase()
+}
 
 function Square({ squareId, piece, isDark, isActive, targetedBy, onClick }) {
   let symbol = null
