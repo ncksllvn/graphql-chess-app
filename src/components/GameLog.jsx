@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 
-import { selectGameLog } from '../../constants/selectors'
+import { selectGameLog } from '../constants/selectors'
 
-import useAppState from '../../hooks/useAppState'
-import useGameLog from '../../hooks/useGameLog'
-import useScrollToBottom from '../../hooks/useScrollToBottom'
+import useAppState from '../hooks/useAppState'
+import useGameLog from '../hooks/useGameLog'
+import useScrollToBottom from '../hooks/useScrollToBottom'
 
 export default function GameLog(){
   const gameLog = useAppState(selectGameLog)

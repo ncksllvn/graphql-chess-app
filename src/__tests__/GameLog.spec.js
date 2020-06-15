@@ -9,9 +9,9 @@ import {
 import{
   Provider,
   QueryChess
-} from '../../testing/helpers'
+} from '../testing/helpers'
 
-import GameLog from '.';
+import GameLog from '../components/GameLog';
 
 test('renders game status', async () => {
   render(
