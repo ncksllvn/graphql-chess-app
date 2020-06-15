@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-import { MAKE_MOVE } from '../graphql'
+import { MAKE_MOVE } from '../constants/graphql'
 import { MOVE_INITIATED } from '../constants/actions'
 
 import PIECES from '../constants/pieces'

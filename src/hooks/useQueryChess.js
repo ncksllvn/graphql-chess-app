@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 import { APP_STARTED } from '../constants/actions'
-import { GET_CHESS } from '../graphql'
+import { GET_CHESS } from '../constants/graphql'
 
 import useAPI from './useAPI'
 
