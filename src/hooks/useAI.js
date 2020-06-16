@@ -1,16 +1,12 @@
 import { useEffect, useCallback } from 'react'
 
-import {
-  AI_COLOR
-} from '../constants/colors'
-
+import { AI_MOVE_DELAY } from '../constants/misc'
+import { AI_COLOR } from '../constants/colors'
 import { selectChess } from '../constants/selectors'
 
 import useAppState from './useAppState'
 import useActiveSquare from './useActiveSquare'
 import useInitiateMove from './useInitiateMove'
-
-const AI_MOVE_DELAY = 1000
 
 export default function useAI() {
   const chess = useAppState(selectChess)
