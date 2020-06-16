@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/graphql-chess-app/static/css/main.0129f597.chunk.css",
-    "main.js": "/graphql-chess-app/static/js/main.fe9b06de.chunk.js",
-    "main.js.map": "/graphql-chess-app/static/js/main.fe9b06de.chunk.js.map",
+    "main.js": "/graphql-chess-app/static/js/main.00b77ee0.chunk.js",
+    "main.js.map": "/graphql-chess-app/static/js/main.00b77ee0.chunk.js.map",
     "runtime-main.js": "/graphql-chess-app/static/js/runtime-main.1ab72d4b.js",
     "runtime-main.js.map": "/graphql-chess-app/static/js/runtime-main.1ab72d4b.js.map",
     "static/js/2.3e50b543.chunk.js": "/graphql-chess-app/static/js/2.3e50b543.chunk.js",
     "static/js/2.3e50b543.chunk.js.map": "/graphql-chess-app/static/js/2.3e50b543.chunk.js.map",
     "index.html": "/graphql-chess-app/index.html",
-    "precache-manifest.49ceeccba6d6782e0e3cbbb3a1578484.js": "/graphql-chess-app/precache-manifest.49ceeccba6d6782e0e3cbbb3a1578484.js",
+    "precache-manifest.72381bb7f4a4dcd02c31d2397571d8a6.js": "/graphql-chess-app/precache-manifest.72381bb7f4a4dcd02c31d2397571d8a6.js",
     "service-worker.js": "/graphql-chess-app/service-worker.js",
     "static/css/main.0129f597.chunk.css.map": "/graphql-chess-app/static/css/main.0129f597.chunk.css.map",
     "static/js/2.3e50b543.chunk.js.LICENSE.txt": "/graphql-chess-app/static/js/2.3e50b543.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1ab72d4b.js",
     "static/js/2.3e50b543.chunk.js",
     "static/css/main.0129f597.chunk.css",
-    "static/js/main.fe9b06de.chunk.js"
+    "static/js/main.00b77ee0.chunk.js"
   ]
 }
